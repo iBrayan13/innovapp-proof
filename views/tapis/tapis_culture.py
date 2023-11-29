@@ -2,12 +2,21 @@ from flet import Page, View, Container, Stack, Row, Column, Image, Text, MainAxi
 from utils.events import Events
 from time import sleep
 
-def get_txt(txt: str):
+# Text
+from .text import tapis_culture
+
+def get_txt(text_list: list):
     lines = []
-    with open(txt, "r") as file:
-        for line in file:
-            new_line = line.replace('Ã©','é').replace('Ã\xad', 'í')
-            lines.append(new_line[0: len(new_line) - 1])
+    for line in text_list:
+        new_line = line.replace('Ã©','é').replace('Ã\xad', 'í')
+        lines.append(
+            Text(
+                new_line[0: len(new_line) - 1],
+                size= 19,
+                color= "white",
+                font_family= "EB Garamond"
+            )
+        )
     
     return lines
 
@@ -190,15 +199,8 @@ def tapis_culture_view(page: Page):
         right= 60,
         top= 150,
     )
-    for i in get_txt("./assets/text/tapis_culture.txt"):
-        content_body.content.controls.append(
-            Text(
-                i,
-                size= 19,
-                color= "white",
-                font_family= "EB Garamond"
-            )
-        )
+    for i in get_txt(tapis_culture.textList):
+        content_body.content.controls.append(i)
     
     galerie_bar = Container(
         Column([

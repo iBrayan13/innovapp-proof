@@ -132,7 +132,8 @@ def tapis_view(page: Page):
                 padding= 10,
                 width= 130,
                 height= 130,
-                on_hover= handle_hover_cont
+                on_hover= handle_hover_cont,
+                on_click= events.go_french_tapis_regions_cite
             ),
             Container(
                 Column(

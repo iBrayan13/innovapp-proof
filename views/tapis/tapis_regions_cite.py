@@ -1,7 +1,9 @@
 from flet import Page, View, Container, Stack, Row, Column, Image, Text, MainAxisAlignment, CrossAxisAlignment, border_radius, padding
 from utils.events import Events
 from time import sleep
-from .text import tapis_histoire
+
+# Text
+from .text import tapis_regions_cite_rabat
 
 def get_txt(text_list: list):
     lines = []
@@ -18,7 +20,7 @@ def get_txt(text_list: list):
     
     return lines
 
-def tapis_histoire_view(page: Page):
+def tapis_regions_cite_view(page: Page):
     page.scroll = "always"
     page.vertical_alignment = MainAxisAlignment.CENTER
     page.horizontal_alignment = CrossAxisAlignment.CENTER
@@ -75,14 +77,14 @@ def tapis_histoire_view(page: Page):
         page.update()
 
     def show_hover_art(e):
-        body.content.controls[5] = art_page
+        body.content.controls[4] = art_page
         e.control.content.color = "orange"
         e.control.on_hover = None
         page.update()
 
         sleep(3)
 
-        body.content.controls[5] = Container()
+        body.content.controls[4] = Container()
         e.control.on_hover = show_hover_art
         e.control.content.color = "white"
         art_page.content.controls[0].content.color = "white"
@@ -91,25 +93,26 @@ def tapis_histoire_view(page: Page):
 
     def handle_color(e):
         e.control.content.color = "orange" if e.data == "true" else "white"
-        e.control.update()
+        page.update()
     bar = Container(
         Row([
             Container(
                 Text(
                     "De l'Histoire",
                     font_family= "Eb Garamond",
-                    color= "orange",
+                    color= "white",
                     size= 22
                 ),
+                on_hover= handle_color,
+                on_click= events.go_french_tapis_histoire
             ),
             Container(
                 Text(
                     "De Régions",
                     font_family= "Eb Garamond",
-                    color= "white",
+                    color= "orange",
                     size= 22
                 ),
-                on_hover= handle_color
             ),
             Container(
                 Text(
@@ -182,6 +185,95 @@ def tapis_histoire_view(page: Page):
         right= 105
     )
 
+    content_body = Container(
+        Column(
+            [],
+            spacing= 0,
+            scroll= "always",
+            height= 190
+        ),
+        width= 375,
+        height= 220,
+        padding= padding.only(50, 15, 15, 15),
+        bgcolor= "#80460E",
+        left= 60,
+        top= 280,
+    )
+    # Default content
+    for i in get_txt(tapis_regions_cite_rabat.textList):
+        content_body.content.controls.append(i)
+    content_second_body = Container(
+        Column(
+            [],
+            spacing= 0,
+            height= 190
+        ),
+        width= 285,
+        height= 220,
+        padding= 15,
+        bgcolor= "#80460E",
+        border_radius= border_radius.only(bottom_right= 15),
+        right= 60,
+        top= 280,
+    )
+    def handle_content(e):
+        content_body.content.controls = []
+
+        if e.control.content.value == "Le Tapis Rabat":
+            txt_list = tapis_regions_cite_rabat.textList
+        elif e.control.content.value == "Le Tapis de Médiouna":
+            txt_list = tapis_regions_cite_mediouna.textList
+        elif e.control.content.value == "Le Tapis de Fes":
+            txt_list = tapis_regions_cite_fes.textList
+        
+        for i in get_txt(txt_list):
+            content_body.content.controls.append(i)
+    content_bar_body = Container(
+        Row(
+            [
+                Container(
+                    Text(
+                        "Le Tapis Rabat",
+                        font_family= "EB Garamond",
+                        size= 20,
+                        color= "white"
+                    ),
+                    on_hover= handle_color,
+                    on_click= handle_content
+                ),
+                Container(
+                    Text(
+                        "Le Tapis de Médiouna",
+                        font_family= "EB Garamond",
+                        size= 20,
+                        color= "white"
+                    ),
+                    on_hover= handle_color,
+                    on_click= handle_content
+                ),
+                Container(
+                    Text(
+                        "Le Tapis de Fes",
+                        font_family= "EB Garamond",
+                        size= 20,
+                        color= "white"
+                    ),
+                    on_hover= handle_color,
+                    on_click= handle_content
+                ),
+            ],
+            spacing= 50,
+            width= 567
+        ),
+        width= 645,
+        height= 60,
+        padding= padding.only(63, 15, 25, 15),
+        bgcolor= "#4D0130",
+        border_radius= border_radius.only(top_right= 15),
+        left= 60,
+        top= 220,
+    )
+    
     galerie_bar = Container(
         Column([
             Container(
@@ -214,69 +306,28 @@ def tapis_histoire_view(page: Page):
         right= 20
     )
 
-    content_body = Container(
-        Column(
-            [],
-            spacing= 0,
-            scroll= "always",
-            height= 310
-        ),
-        width= page.width - 120,
-        height= 180,
-        padding= padding.only(35, 15, 15, 15),
-        bgcolor= "#80460E",
-        border_radius= border_radius.only(bottom_right= 15, top_right= 15),
-        right= 55,
-        top= 310,
-    )
-    for i in  get_txt(tapis_histoire.textList):
-        content_body.content.controls.append(i)
-    
-    tapises = Row(
-        [
-            Image(
-                src= "img/tapis/tapis_histoire_img_1.png",
-                height= 160
-            ),
-            Image(
-                src= "img/tapis/tapis_histoire_img_2.png",
-                height= 160
-            ),
-            Image(
-                src= "img/tapis/tapis_histoire_img_3.png",
-                height= 160
-            ),
-            Image(
-                src= "img/tapis/tapis_histoire_img_4.png",
-                height= 160
-            )
-        ],
-        spacing= 20,
-        top= 140,
-        left= 140
-    )
-
     body = Container(
         Stack([
             bg,
             navbar,
             bar,
             content_body,
-            tapises,
             Container(),
+            content_bar_body,
             Image(
                 src= "img/tapis/tapis_text_img.png",
-                width= 40,
-                height= 181,
-                left= 55,
-                top= 309,
+                width= 38,
+                height= 330,
+                left= 60,
+                top= 195,
             ),
             Container(),
+            content_second_body,
         ])
     )
 
     return View(
-        "/french/tapis/histoire",
+        "/french/tapis/regions-cite",
         [
             body
         ],
