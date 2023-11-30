@@ -40,6 +40,7 @@ class Events:
         self.go_french_tapis = lambda e: self.page.go("/french/tapis")
         self.go_french_tapis_histoire = lambda e: self.page.go("/french/tapis/histoire")
         self.go_french_tapis_regions_cite = lambda e: self.page.go("/french/tapis/regions-cite")
+        self.go_french_tapis_regions_monde = lambda e: self.page.go("/french/tapis/regions-monde")
         self.go_french_tapis_culture = lambda e: self.page.go("/french/tapis/culture")
         self.go_french_tapis_art_citadin = lambda e: self.page.go("/french/tapis/art-citadin")
         self.go_french_tapis_art_rural = lambda e: self.page.go("/french/tapis/art-rural")

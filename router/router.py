@@ -35,6 +35,7 @@ from views.musee.musee_tresors_savoir import musee_tresors_savoir_view
 from views.tapis.tapis import tapis_view
 from views.tapis.tapis_histoire import tapis_histoire_view
 from views.tapis.tapis_regions_cite import tapis_regions_cite_view
+from views.tapis.tapis_regions_monde import tapis_regions_monde_view
 from views.tapis.tapis_culture import tapis_culture_view
 from views.tapis.tapis_art_citadin import tapis_art_citadin_view
 from views.tapis.tapis_art_rural import tapis_art_rural_view
@@ -120,6 +121,8 @@ def router(page: Page):
             page.views.append(tapis_histoire_view(page))
         if page.route == "/french/tapis/regions-cite":
             page.views.append(tapis_regions_cite_view(page))
+        if page.route == "/french/tapis/regions-monde":
+            page.views.append(tapis_regions_monde_view(page))
         if page.route == "/french/tapis/culture":
             page.views.append(tapis_culture_view(page))
         if page.route == "/french/tapis/art-citadin":

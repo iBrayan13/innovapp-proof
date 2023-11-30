@@ -65,6 +65,21 @@ def tapis_culture_view(page: Page):
         padding= 0
     )
 
+    def show_hover_regions(e):
+        body.content.controls[7] = regions_bar
+        e.control.content.color = "orange"
+        e.control.on_hover = None
+        page.update()
+
+        sleep(3)
+
+        body.content.controls[7] = Container()
+        e.control.on_hover = show_hover_regions
+        e.control.content.color = "white"
+        regions_bar.content.controls[0].content.color = "white"
+        regions_bar.content.controls[1].content.color = "white"
+        page.update()
+
     def show_hover_galerie(e):
         body.content.controls[6] = galerie_bar
         e.control.on_hover = None
@@ -113,7 +128,7 @@ def tapis_culture_view(page: Page):
                     color= "white",
                     size= 22
                 ),
-                on_hover= handle_color
+                on_hover= show_hover_regions
             ),
             Container(
                 Text(
@@ -234,6 +249,38 @@ def tapis_culture_view(page: Page):
         right= 20
     )
 
+    regions_bar = Container(
+        Column([
+            Container(
+                Text(
+                    "A travers la cité",
+                    font_family= "EB Garamond",
+                    size= 18,
+                    color= "white"
+                ),
+                on_hover= handle_color,
+                on_click= events.go_french_tapis_regions_cite
+            ),
+            Container(
+                Text(
+                    "A travers le monde rural",
+                    font_family= "EB Garamond",
+                    size= 18,
+                    color= "white"
+                ),
+                on_hover= handle_color,
+                on_click= events.go_french_tapis_regions_monde
+            ),
+        ], spacing= 10),
+        width= 210,
+        height= 90,
+        padding= 10,
+        bgcolor= "#4D0130",
+        border_radius= border_radius.only(bottom_left= 15, bottom_right= 15),
+        top= 120,
+        left= 180
+    )
+
     body = Container(
         Stack([
             bg,
@@ -249,6 +296,7 @@ def tapis_culture_view(page: Page):
                 top= 150,
             ),
             Container(),
+            Container()
         ])
     )
 
