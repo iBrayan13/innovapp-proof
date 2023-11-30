@@ -11,7 +11,7 @@ def get_txt(text_list: list):
         new_line = line.replace('Ã©','é').replace('Ã\xad', 'í')
         lines.append(
             Text(
-                new_line[0: len(new_line) - 1],
+                new_line,
                 size= 19,
                 color= "white",
                 font_family= "EB Garamond"

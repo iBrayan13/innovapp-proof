@@ -1,9 +1,9 @@
-from flet import Page, View, Container, Stack, Row, Column, Image, Text, MainAxisAlignment, CrossAxisAlignment, border_radius, padding
+from flet import Page, View, Container, Stack, Row, Column, Image, Text, MainAxisAlignment, CrossAxisAlignment, border_radius, padding, margin
 from utils.events import Events
 from time import sleep
 
 # Text
-from .text import tapis_regions_cite_rabat
+from .text import tapis_regions_cite_rabat, tapis_regions_cite_mediouna, tapis_regions_cite_fes
 
 def get_txt(text_list: list):
     lines = []
@@ -11,7 +11,7 @@ def get_txt(text_list: list):
         new_line = line.replace('Ã©','é').replace('Ã\xad', 'í')
         lines.append(
             Text(
-                new_line[0: len(new_line) - 1],
+                new_line,
                 size= 19,
                 color= "white",
                 font_family= "EB Garamond"
@@ -204,8 +204,94 @@ def tapis_regions_cite_view(page: Page):
         content_body.content.controls.append(i)
     content_second_body = Container(
         Column(
-            [],
-            spacing= 0,
+            [
+                Row([
+                    Row([
+                        Text(
+                            "Photo",
+                            font_family= "EB Garamond",
+                            color= "white",
+                            size= 16
+                        ),
+                        Text(
+                            "1",
+                            font_family= "EB Garamond",
+                            color= "orange",
+                            size= 16
+                        ),
+                        Text(
+                            "2",
+                            font_family= "EB Garamond",
+                            color= "orange",
+                            size= 16
+                        ),
+                        Text(
+                            "3",
+                            font_family= "EB Garamond",
+                            color= "gray",
+                            size= 16
+                        ),
+                        Text(
+                            "4",
+                            font_family= "EB Garamond",
+                            color= "gray",
+                            size= 16
+                        ),
+                        Text(
+                            "5",
+                            font_family= "EB Garamond",
+                            color= "gray",
+                            size= 16
+                        ),
+                    ], spacing= 5),
+                    Row([
+                        Text(
+                            "Dessin",
+                            font_family= "EB Garamond",
+                            color= "white",
+                            size= 16
+                        ),
+                        Text(
+                            "1",
+                            font_family= "EB Garamond",
+                            color= "orange",
+                            size= 16
+                        ),
+                        Text(
+                            "2",
+                            font_family= "EB Garamond",
+                            color= "orange",
+                            size= 16
+                        ),
+                        Text(
+                            "3",
+                            font_family= "EB Garamond",
+                            color= "orange",
+                            size= 16
+                        ),
+                        Text(
+                            "4",
+                            font_family= "EB Garamond",
+                            color= "gray",
+                            size= 16
+                        ),
+                        Text(
+                            "5",
+                            font_family= "EB Garamond",
+                            color= "gray",
+                            size= 16
+                        ),
+                    ], spacing= 5)
+                ], spacing= 10),
+                Container(
+                    Image(
+                        src= "img/tapis/regions/cite_rabat_imgs.png",
+                        height= 160,
+                    ),
+                    margin= margin.only(left= 40)
+                )
+            ],
+            spacing= 10,
             height= 190
         ),
         width= 285,
@@ -221,11 +307,55 @@ def tapis_regions_cite_view(page: Page):
 
         if e.control.content.value == "Le Tapis Rabat":
             txt_list = tapis_regions_cite_rabat.textList
+            content_second_body.content.controls[1].content.src = "img/tapis/regions/cite_rabat_imgs.png"
+
+            # Photo Text
+            content_second_body.content.controls[0].controls[0].controls[1].color = "orange"
+            content_second_body.content.controls[0].controls[0].controls[2].color = "orange"
+            content_second_body.content.controls[0].controls[0].controls[3].color = "gray"
+            content_second_body.content.controls[0].controls[0].controls[4].color = "gray"
+            content_second_body.content.controls[0].controls[0].controls[5].color = "gray"
+            # Dessin Text
+            content_second_body.content.controls[0].controls[1].controls[1].color = "orange"
+            content_second_body.content.controls[0].controls[1].controls[2].color = "orange"
+            content_second_body.content.controls[0].controls[1].controls[3].color = "orange"
+            content_second_body.content.controls[0].controls[1].controls[4].color = "gray"
+            content_second_body.content.controls[0].controls[1].controls[5].color = "gray"
+        
         elif e.control.content.value == "Le Tapis de Médiouna":
             txt_list = tapis_regions_cite_mediouna.textList
+            content_second_body.content.controls[1].content.src = "img/tapis/regions/cite_mediouna_imgs.png"
+
+            # Photo Text
+            content_second_body.content.controls[0].controls[0].controls[1].color = "gray"
+            content_second_body.content.controls[0].controls[0].controls[2].color = "gray"
+            content_second_body.content.controls[0].controls[0].controls[3].color = "orange"
+            content_second_body.content.controls[0].controls[0].controls[4].color = "gray"
+            content_second_body.content.controls[0].controls[0].controls[5].color = "gray"
+            # Dessin Text
+            content_second_body.content.controls[0].controls[1].controls[1].color = "gray"
+            content_second_body.content.controls[0].controls[1].controls[2].color = "gray"
+            content_second_body.content.controls[0].controls[1].controls[3].color = "orange"
+            content_second_body.content.controls[0].controls[1].controls[4].color = "gray"
+            content_second_body.content.controls[0].controls[1].controls[5].color = "gray"
+
         elif e.control.content.value == "Le Tapis de Fes":
             txt_list = tapis_regions_cite_fes.textList
-        
+            content_second_body.content.controls[1].content.src = "img/tapis/regions/cite_fes_imgs.png"
+
+            # Photo Text
+            content_second_body.content.controls[0].controls[0].controls[1].color = "gray"
+            content_second_body.content.controls[0].controls[0].controls[2].color = "gray"
+            content_second_body.content.controls[0].controls[0].controls[3].color = "gray"
+            content_second_body.content.controls[0].controls[0].controls[4].color = "orange"
+            content_second_body.content.controls[0].controls[0].controls[5].color = "orange"
+            # Dessin Text
+            content_second_body.content.controls[0].controls[1].controls[1].color = "gray"
+            content_second_body.content.controls[0].controls[1].controls[2].color = "gray"
+            content_second_body.content.controls[0].controls[1].controls[3].color = "gray"
+            content_second_body.content.controls[0].controls[1].controls[4].color = "orange"
+            content_second_body.content.controls[0].controls[1].controls[5].color = "orange"
+
         for i in get_txt(txt_list):
             content_body.content.controls.append(i)
     content_bar_body = Container(
@@ -272,6 +402,35 @@ def tapis_regions_cite_view(page: Page):
         border_radius= border_radius.only(top_right= 15),
         left= 60,
         top= 220,
+    )
+    current_page = Container(
+        Column([
+            Container(
+                Text(
+                    "A travers la cité",
+                    font_family= "EB Garamond",
+                    size= 18,
+                    color= "orange"
+                ),
+            ),
+            Container(
+                Text(
+                    "A travers le monde rural",
+                    font_family= "EB Garamond",
+                    size= 18,
+                    color= "white"
+                ),
+                on_hover= handle_color,
+                on_click= events.go_french_tapis_regions_cite
+            ),
+        ], spacing= 10),
+        width= 210,
+        height= 90,
+        padding= 10,
+        bgcolor= "#4D0130",
+        border_radius= border_radius.only(bottom_left= 15, bottom_right= 15),
+        top= 120,
+        left= 180
     )
     
     galerie_bar = Container(
@@ -323,6 +482,7 @@ def tapis_regions_cite_view(page: Page):
             ),
             Container(),
             content_second_body,
+            current_page
         ])
     )
 
