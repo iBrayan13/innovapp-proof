@@ -17,24 +17,10 @@ def utiles_informations_view(page: Page):
 
     navbar = Container(
         content= Stack([
-            Row([
-                Container(
-                    Text("Retour", font_family= "EB Garamond", color= "white", size= 18),
-                    on_click= events.go_french_utiles,
-                    padding= 0,
-                    on_hover= handle_hover_navbar_left
-                ),
-                navbar_img,
-                Container(
-                    Text("Principal", font_family= "EB Garamond", color= "white", size= 18),
-                    on_click= events.go_home,
-                    padding= 0,
-                    on_hover= handle_hover_navbar_right
-                )
-            ], spacing= 0)
+            navbar_img,
         ]),
-        left= 420,
-        top= 500,
+        right= 90,
+        bottom= 23,
         padding= 0
     )
 
@@ -44,146 +30,144 @@ def utiles_informations_view(page: Page):
             Container(
                 content= Stack([
                     Image(
-                        src= "img/background.jpg",
-                        width= 800,
-                        height= 600
-                    ),
-                    Container(
-                        Image(
-                            src= "img/utiles/utiles_informations_imgs.png",
-                            width= 80,
-                            height= 540
-                        ),
-                        margin= margin.only(left=20, top= 25)
+                        src= "img/utiles/utiles_informations_bg.png",
+                        width= 768,
+                        height= 576
                     ),
                     Container(
                         content= Stack([
-                            Column([
-                                Text(
-                                    "Informations practiques",
-                                    size= 32,
-                                    color= "white",
-                                    font_family= "EB Garamond"
-                                ),
-                                Container(
-                                    Column([
-                                        Row([
-                                            Container(
-                                                Image(
-                                                    src= "img/menu_point.png",
-                                                    width= 30,
-                                                    height= 30,
-                                                )
-                                            ),
-                                            Text(
-                                                "Guide des musées.",
-                                                color="yellow",
-                                                size= 18,
-                                                font_family= "EB Garamond"
-                                            ),
-                                        ]),
-                                        Row([
-                                            Container(
-                                                Image(
-                                                    src= "img/menu_point.png",
-                                                    width= 30,
-                                                    height= 30,
-                                                )
-                                            ),
-                                            Text(
-                                                "Evénements et dates du tourisme national.",
-                                                color="yellow",
-                                                size= 18,
-                                                font_family= "EB Garamond"
-                                            ),
-                                        ]),
-                                        Row([
-                                            Container(
-                                                Image(
-                                                    src= "img/menu_point.png",
-                                                    width= 30,
-                                                    height= 30,
-                                                )
-                                            ),
-                                            Text(
-                                                "Prix homologués du Ministere de l'Artisanat et du Tourisme.",
-                                                color="yellow",
-                                                size= 18,
-                                                font_family= "EB Garamond"
-                                            ),
-                                        ]),
-                                        Row([
-                                            Container(
-                                                Image(
-                                                    src= "img/menu_point.png",
-                                                    width= 30,
-                                                    height= 30,
-                                                )
-                                            ),
-                                            Text(
-                                                "Conseils supplémentaires et carnet d'adresses.",
-                                                color="yellow",
-                                                size= 18,
-                                                font_family= "EB Garamond"
-                                            ),
-                                        ]),
-                                        Row([
-                                            Container(
-                                                Image(
-                                                    src= "img/menu_point.png",
-                                                    width= 30,
-                                                    height= 30,
-                                                )
-                                            ),
-                                            Text(
-                                                "Bibliographies.",
-                                                color="yellow",
-                                                size= 18,
-                                                font_family= "EB Garamond"
-                                            ),
-                                        ]),
-                                        Row([
-                                            Container(
-                                                Image(
-                                                    src= "img/menu_point.png",
-                                                    width= 30,
-                                                    height= 30,
-                                                )
-                                            ),
-                                            Text(
-                                                "Lexique.",
-                                                color="yellow",
-                                                size= 18,
-                                                font_family= "EB Garamond"
-                                            ),
-                                        ]),
-                                        Row([
-                                            Container(
-                                                Image(
-                                                    src= "img/menu_point.png",
-                                                    width= 30,
-                                                    height= 30,
-                                                )
-                                            ),
-                                            Text(
-                                                "Index.",
-                                                color="yellow",
-                                                size= 18,
-                                                font_family= "EB Garamond"
-                                            ),
-                                        ]),
+                            Container(
+                                Column([
+                                    Row([
+                                        Container(
+                                            Image(
+                                                src= "img/menu_point.png",
+                                                width= 30,
+                                                height= 30,
+                                            )
+                                        ),
+                                        Text(
+                                            "Guide des musées.",
+                                            color="#CECE63",
+                                            size= 18,
+                                            font_family= "EB Garamond"
+                                        ),
                                     ]),
-                                    width=540,
-                                    height= 290,
-                                    border_radius= 20,
-                                    padding= 10,
-                                    bgcolor= "#4D0130"
-                                )
-                            ])
+                                    Row([
+                                        Container(
+                                            Image(
+                                                src= "img/menu_point.png",
+                                                width= 30,
+                                                height= 30,
+                                            )
+                                        ),
+                                        Text(
+                                            "Evénements et dates du tourisme national.",
+                                            color="#CECE63",
+                                            size= 18,
+                                            font_family= "EB Garamond"
+                                        ),
+                                    ]),
+                                    Row([
+                                        Container(
+                                            Image(
+                                                src= "img/menu_point.png",
+                                                width= 30,
+                                                height= 30,
+                                            )
+                                        ),
+                                        Text(
+                                            "Prix homologués du Ministere de l'Artisanat et du Tourisme.",
+                                            color="#CECE63",
+                                            size= 18,
+                                            font_family= "EB Garamond"
+                                        ),
+                                    ]),
+                                    Row([
+                                        Container(
+                                            Image(
+                                                src= "img/menu_point.png",
+                                                width= 30,
+                                                height= 30,
+                                            )
+                                        ),
+                                        Text(
+                                            "Conseils supplémentaires et carnet d'adresses.",
+                                            color="#CECE63",
+                                            size= 18,
+                                            font_family= "EB Garamond"
+                                        ),
+                                    ]),
+                                    Row([
+                                        Container(
+                                            Image(
+                                                src= "img/menu_point.png",
+                                                width= 30,
+                                                height= 30,
+                                            )
+                                        ),
+                                        Text(
+                                            "Bibliographies.",
+                                            color="#CECE63",
+                                            size= 18,
+                                            font_family= "EB Garamond"
+                                        ),
+                                    ]),
+                                    Row([
+                                        Container(
+                                            Image(
+                                                src= "img/menu_point.png",
+                                                width= 30,
+                                                height= 30,
+                                            )
+                                        ),
+                                        Text(
+                                            "Lexique.",
+                                            color="#CECE63",
+                                            size= 18,
+                                            font_family= "EB Garamond"
+                                        ),
+                                    ]),
+                                    Row([
+                                        Container(
+                                            Image(
+                                                src= "img/menu_point.png",
+                                                width= 30,
+                                                height= 30,
+                                            )
+                                        ),
+                                        Text(
+                                            "Index.",
+                                            color="#CECE63",
+                                            size= 18,
+                                            font_family= "EB Garamond"
+                                        ),
+                                    ]),
+                                ]),
+                                width=540,
+                                height= 290,
+                                padding= 10,
+                            )
                         ]),
-                        margin= margin.only(left= 145, top= 115)
+                        margin= margin.only(left= 175, top= 145)
                     ),
-                    navbar
+                    navbar,
+                    Container(
+                        right= 22,
+                        bottom= 24,
+                        width= 143,
+                        height= 40,
+                        on_hover= handle_hover_navbar_right,
+                        on_click= events.go_home,
+                    ),
+                    Container(
+                        right= 185,
+                        bottom= 24,
+                        width= 123,
+                        height= 40,
+                        on_hover= handle_hover_navbar_left,
+                        on_click= events.go_french_utiles,
+                    ),
                 ])
             )
         ],

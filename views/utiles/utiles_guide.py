@@ -44,84 +44,66 @@ def utiles_guide_view(page: Page):
             Container(
                 content= Stack([
                     Image(
-                        src= "img/background.jpg",
-                        width= 800,
-                        height= 600
-                    ),
-                    Container(
-                        Image(
-                            src= "img/utiles/utiles_guide_imgs.png",
-                            width= 80,
-                            height= 540
-                        ),
-                        margin= margin.only(left=20, top= 25)
+                        src= "img/utiles/utiles_guide_bg.png",
+                        width= 768,
+                        height= 576
                     ),
                     Container(
                         content= Stack([
-                            Column([
-                                Text(
-                                    "Guide pour les professionnels\net pour le grand public",
-                                    size= 32,
-                                    color= "white",
-                                    font_family= "EB Garamond"
-                                ),
-                                Container(
-                                    Column([
-                                        Row([
-                                            Container(
-                                                Image(
-                                                    src= "img/menu_point.png",
-                                                    width= 30,
-                                                    height= 30,
-                                                )
-                                            ),
-                                            Text(
-                                                "Institutions de tutelle et organismes convergents.",
-                                                color="yellow",
-                                                size= 18,
-                                                font_family= "EB Garamond"
-                                            ),
-                                        ]),
-                                        Row([
-                                            Container(
-                                                Image(
-                                                    src= "img/menu_point.png",
-                                                    width= 30,
-                                                    height= 30,
-                                                )
-                                            ),
-                                            Text(
-                                                "Evénements, dates, expositions nationales et internationales.",
-                                                color="yellow",
-                                                size= 18,
-                                                font_family= "EB Garamond"
-                                            ),
-                                        ]),
-                                        Row([
-                                            Container(
-                                                Image(
-                                                    src= "img/menu_point.png",
-                                                    width= 30,
-                                                    height= 30,
-                                                )
-                                            ),
-                                            Text(
-                                                "Informations sur le commerces électroniques et sites utiles.",
-                                                color="yellow",
-                                                size= 18,
-                                                font_family= "EB Garamond"
-                                            ),
-                                        ]),
+                            Container(
+                                Column([
+                                    Row([
+                                        Container(
+                                            Image(
+                                                src= "img/menu_point.png",
+                                                width= 30,
+                                                height= 30,
+                                            )
+                                        ),
+                                        Text(
+                                            "Institutions de tutelle et organismes convergents.",
+                                            color="#CECE63",
+                                            size= 18,
+                                            font_family= "EB Garamond"
+                                        ),
                                     ]),
-                                    width=540,
-                                    height= 130,
-                                    border_radius= 20,
-                                    padding= 10,
-                                    bgcolor= "#4D0130"
-                                )
-                            ])
+                                    Row([
+                                        Container(
+                                            Image(
+                                                src= "img/menu_point.png",
+                                                width= 30,
+                                                height= 30,
+                                            )
+                                        ),
+                                        Text(
+                                            "Evénements, dates, expositions nationales et internationales.",
+                                            color="#CECE63",
+                                            size= 18,
+                                            font_family= "EB Garamond"
+                                        ),
+                                    ]),
+                                    Row([
+                                        Container(
+                                            Image(
+                                                src= "img/menu_point.png",
+                                                width= 30,
+                                                height= 30,
+                                            )
+                                        ),
+                                        Text(
+                                            "Informations sur le commerces électroniques et sites utiles.",
+                                            color="#CECE63",
+                                            size= 18,
+                                            font_family= "EB Garamond"
+                                        ),
+                                    ]),
+                                ]),
+                                width=540,
+                                height= 130,
+                                padding= 10,
+                            )
                         ]),
-                        margin= margin.only(left= 145, top= 140)
+                        margin= margin.only(left= 175, top= 180)
                     ),
                     navbar
                 ])

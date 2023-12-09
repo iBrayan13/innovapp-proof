@@ -11,9 +11,9 @@ def utiles_view(page: Page):
         e.control.update()
 
     bg = Image(
-        src= "img/background.jpg",
-        width= 800,
-        height= 600
+        src= "img/utiles/utiles_bg.png",
+        width= 768,
+        height= 576
     )
     
     navbar_img = Image(
@@ -46,22 +46,13 @@ def utiles_view(page: Page):
             ], spacing= 0)
         ]),
         left= 420,
-        top= 500,
+        bottom= 30,
         padding= 0
     )
 
     body = Stack(
         [
             bg,
-            Text(
-                "Liens utiles",
-                size= 48,
-                weight= FontWeight.W_200,
-                color= "white",
-                top= 15,
-                left= 60,
-                font_family= "EB Garamond"
-            ),
             navbar,
             Container(
                 Row(
@@ -81,7 +72,7 @@ def utiles_view(page: Page):
                     ],
                 ),
                 top= 200,
-                left= 70,
+                left= 80,
                 on_click= events.go_french_utiles_guide,
                 on_hover= handle_hover
             ),
@@ -103,7 +94,7 @@ def utiles_view(page: Page):
                     ],
                 ),
                 top= 260,
-                left= 70,
+                left= 80,
                 on_click= events.go_french_utiles_informations,
                 on_hover= handle_hover
             ),
