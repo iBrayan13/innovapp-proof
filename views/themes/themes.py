@@ -17,7 +17,7 @@ def themes_view(page: Page):
         e.control.update()
         
     bg = Image(
-        src= "img/background.jpg",
+        src= "img/themes/themes_bg.png",
         width= 800,
         height= 600
     )
@@ -59,15 +59,6 @@ def themes_view(page: Page):
     body = Stack(
         [
             bg,
-            Text(
-                "Themes",
-                size= 48,
-                weight= FontWeight.W_200,
-                color= "white",
-                top= 15,
-                left= 60,
-                font_family= "EB Garamond"
-            ),
             navbar,
             Container(
                 Column(

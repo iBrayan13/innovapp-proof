@@ -17,24 +17,10 @@ def themes_itineraire_view(page: Page):
 
     navbar = Container(
         content= Stack([
-            Row([
-                Container(
-                    Text("Retour", font_family= "EB Garamond", color= "white", size= 18),
-                    on_click= events.go_french_themes,
-                    padding= 0,
-                    on_hover= handle_hover_navbar_left
-                ),
-                navbar_img,
-                Container(
-                    Text("Principal", font_family= "EB Garamond", color= "white", size= 18),
-                    on_click= events.go_home,
-                    padding= 0,
-                    on_hover= handle_hover_navbar_right
-                )
-            ], spacing= 0)
+            navbar_img,
         ]),
-        left= 420,
-        top= 500,
+        right= 90,
+        bottom= 23,
         padding= 0
     )
 
@@ -44,27 +30,13 @@ def themes_itineraire_view(page: Page):
             Container(
                 content= Stack([
                     Image(
-                        src= "img/background.jpg",
-                        width= 800,
-                        height= 600
-                    ),
-                    Container(
-                        Image(
-                            src= "img/themes/themes_itineraire_imgs.png",
-                            width= 80,
-                            height= 540
-                        ),
-                        margin= margin.only(left=20, top= 25)
+                        src= "img/themes/themes_itineraire_bg.png",
+                        width= 768,
+                        height= 576
                     ),
                     Container(
                         content= Stack([
                             Column([
-                                Text(
-                                    "Itinéraire géographique de l'artisanat",
-                                    size= 34,
-                                    color= "white",
-                                    font_family= "EB Garamond"
-                                ),
                                 Text(
                                     "Visite du Royaume a la lumiere de son artisanat\n(Contenu éditorial des experts)",
                                     size= 24,
@@ -83,7 +55,7 @@ def themes_itineraire_view(page: Page):
                                             ),
                                             Text(
                                                 "Les caractéristiques historiques.",
-                                                color="yellow",
+                                                color="#CECE63",
                                                 size= 18,
                                                 font_family= "EB Garamond"
                                             ),
@@ -98,7 +70,7 @@ def themes_itineraire_view(page: Page):
                                             ),
                                             Text(
                                                 "Les spécificités culturelles.",
-                                                color="yellow",
+                                                color="#CECE63",
                                                 size= 18,
                                                 font_family= "EB Garamond"
                                             ),
@@ -113,7 +85,7 @@ def themes_itineraire_view(page: Page):
                                             ),
                                             Text(
                                                 "Les spécificités géographiques.",
-                                                color="yellow",
+                                                color="#CECE63",
                                                 size= 18,
                                                 font_family= "EB Garamond"
                                             ),
@@ -128,7 +100,7 @@ def themes_itineraire_view(page: Page):
                                             ),
                                             Text(
                                                 "Cartographie interactive et hyper-liens.",
-                                                color="yellow",
+                                                color="#CECE63",
                                                 size= 18,
                                                 font_family= "EB Garamond"
                                             ),
@@ -136,15 +108,29 @@ def themes_itineraire_view(page: Page):
                                     ]),
                                     width=540,
                                     height= 190,
-                                    border_radius= 20,
                                     padding= 10,
-                                    bgcolor= "#4D0130"
                                 )
                             ])
                         ]),
-                        margin= margin.only(left= 145, top= 130)
+                        margin= margin.only(left= 175, top= 140)
                     ),
-                    navbar
+                    navbar,
+                    Container(
+                        right= 22,
+                        bottom= 24,
+                        width= 143,
+                        height= 40,
+                        on_hover= handle_hover_navbar_right,
+                        on_click= events.go_home,
+                    ),
+                    Container(
+                        right= 185,
+                        bottom= 24,
+                        width= 123,
+                        height= 40,
+                        on_hover= handle_hover_navbar_left,
+                        on_click= events.go_french_themes,
+                    ),
                 ])
             )
         ],

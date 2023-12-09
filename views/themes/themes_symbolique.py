@@ -17,24 +17,10 @@ def themes_symbolique_view(page: Page):
 
     navbar = Container(
         content= Stack([
-            Row([
-                Container(
-                    Text("Retour", font_family= "EB Garamond", color= "white", size= 18),
-                    on_click= events.go_french_themes,
-                    padding= 0,
-                    on_hover= handle_hover_navbar_left
-                ),
-                navbar_img,
-                Container(
-                    Text("Principal", font_family= "EB Garamond", color= "white", size= 18),
-                    on_click= events.go_home,
-                    padding= 0,
-                    on_hover= handle_hover_navbar_right
-                )
-            ], spacing= 0)
+            navbar_img,
         ]),
-        left= 420,
-        top= 500,
+        right= 90,
+        bottom= 23,
         padding= 0
     )
 
@@ -44,101 +30,99 @@ def themes_symbolique_view(page: Page):
             Container(
                 content= Stack([
                     Image(
-                        src= "img/background.jpg",
-                        width= 800,
-                        height= 600
-                    ),
-                    Container(
-                        Image(
-                            src= "img/themes/themes_symbolique_imgs.png",
-                            width= 80,
-                            height= 540
-                        ),
-                        margin= margin.only(left=20, top= 25)
+                        src= "img/themes/themes_symbolique_bg.png",
+                        width= 768,
+                        height= 576
                     ),
                     Container(
                         content= Stack([
-                            Column([
-                                Text(
-                                    "La symbolique de la beauté et\nl'irraditation... Mathématique",
-                                    size= 32,
-                                    color= "white",
-                                    font_family= "EB Garamond"
-                                ),
-                                Container(
-                                    Column([
-                                        Row([
-                                            Container(
-                                                Image(
-                                                    src= "img/menu_point.png",
-                                                    width= 30,
-                                                    height= 30,
-                                                )
-                                            ),
-                                            Text(
-                                                "Les secrets de la géométrie et de l'arabesque.",
-                                                color="yellow",
-                                                size= 18,
-                                                font_family= "EB Garamond"
-                                            ),
-                                        ]),
-                                        Row([
-                                            Container(
-                                                Image(
-                                                    src= "img/menu_point.png",
-                                                    width= 30,
-                                                    height= 30,
-                                                )
-                                            ),
-                                            Text(
-                                                "Des arts qui pointent vers l'abstraction et la transcendance.",
-                                                color="yellow",
-                                                size= 18,
-                                                font_family= "EB Garamond"
-                                            ),
-                                        ]),
-                                        Row([
-                                            Container(
-                                                Image(
-                                                    src= "img/menu_point.png",
-                                                    width= 30,
-                                                    height= 30,
-                                                )
-                                            ),
-                                            Text(
-                                                "La calligraphie, ou la célébration du verbe sacré.",
-                                                color="yellow",
-                                                size= 18,
-                                                font_family= "EB Garamond"
-                                            ),
-                                        ]),
-                                        Row([
-                                            Container(
-                                                Image(
-                                                    src= "img/menu_point.png",
-                                                    width= 30,
-                                                    height= 30,
-                                                )
-                                            ),
-                                            Text(
-                                                "Hymnes poétiques des artisans... Sur leur métiers.",
-                                                color="yellow",
-                                                size= 18,
-                                                font_family= "EB Garamond"
-                                            ),
-                                        ]),
+                            Container(
+                                Column([
+                                    Row([
+                                        Container(
+                                            Image(
+                                                src= "img/menu_point.png",
+                                                width= 30,
+                                                height= 30,
+                                            )
+                                        ),
+                                        Text(
+                                            "Les secrets de la géométrie et de l'arabesque.",
+                                            color="#CECE63",
+                                            size= 18,
+                                            font_family= "EB Garamond"
+                                        ),
                                     ]),
-                                    width=540,
-                                    height= 180,
-                                    border_radius= 20,
-                                    padding= 10,
-                                    bgcolor= "#4D0130"
-                                )
-                            ])
+                                    Row([
+                                        Container(
+                                            Image(
+                                                src= "img/menu_point.png",
+                                                width= 30,
+                                                height= 30,
+                                            )
+                                        ),
+                                        Text(
+                                            "Des arts qui pointent vers l'abstraction et la transcendance.",
+                                            color="#CECE63",
+                                            size= 18,
+                                            font_family= "EB Garamond"
+                                        ),
+                                    ]),
+                                    Row([
+                                        Container(
+                                            Image(
+                                                src= "img/menu_point.png",
+                                                width= 30,
+                                                height= 30,
+                                            )
+                                        ),
+                                        Text(
+                                            "La calligraphie, ou la célébration du verbe sacré.",
+                                            color="#CECE63",
+                                            size= 18,
+                                            font_family= "EB Garamond"
+                                        ),
+                                    ]),
+                                    Row([
+                                        Container(
+                                            Image(
+                                                src= "img/menu_point.png",
+                                                width= 30,
+                                                height= 30,
+                                            )
+                                        ),
+                                        Text(
+                                            "Hymnes poétiques des artisans... Sur leur métiers.",
+                                            color="#CECE63",
+                                            size= 18,
+                                            font_family= "EB Garamond"
+                                        ),
+                                    ]),
+                                ]),
+                                width=540,
+                                height= 180,
+                                padding= 10,
+                            )
                         ]),
-                        margin= margin.only(left= 145, top= 130)
+                        margin= margin.only(left= 175, top= 170)
                     ),
-                    navbar
+                    navbar,
+                    Container(
+                        right= 22,
+                        bottom= 24,
+                        width= 143,
+                        height= 40,
+                        on_hover= handle_hover_navbar_right,
+                        on_click= events.go_home,
+                    ),
+                    Container(
+                        right= 185,
+                        bottom= 24,
+                        width= 123,
+                        height= 40,
+                        on_hover= handle_hover_navbar_left,
+                        on_click= events.go_french_themes,
+                    ),
                 ])
             )
         ],
