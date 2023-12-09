@@ -1,4 +1,4 @@
-from flet import Page, View, Stack, Container, Row, Image, Text, FontWeight, margin, MainAxisAlignment, CrossAxisAlignment
+from flet import Page, View, Stack, Container, Row, Image, Text, MainAxisAlignment, CrossAxisAlignment
 from utils.events import Events
 
 def french_introduction_view(page: Page):
@@ -7,18 +7,21 @@ def french_introduction_view(page: Page):
     events = Events(page)
 
     introduction_img = Image(
-        src= "img/introduction/introduction.png",
+        src= "img/introduction/introduction_bg.png",
         width= 800,
         height= 600
     )
+    objectifs_img = Image(src= "empty")
+    public_img = Image(src= "empty")
+    contexte_img = Image(src= "empty")
     def handle_hover_introduction_objectifs(e):
-        introduction_img.src = "img/introduction/introduction_objectifs_hover.png" if e.data == "true" else "img/introduction/introduction.png"
+        objectifs_img.src = "img/introduction/objectifs_hover.png" if e.data == "true" else "empty"
         page.update()
     def handle_hover_introduction_public(e):
-        introduction_img.src = "img/introduction/introduction_public_hover.png" if e.data == "true" else "img/introduction/introduction.png"
+        public_img.src = "img/introduction/public_hover.png" if e.data == "true" else "empty"
         page.update()
     def handle_hover_introduction_contexte(e):
-        introduction_img.src = "img/introduction/introduction_contexte_hover.png" if e.data == "true" else "img/introduction/introduction.png"
+        contexte_img.src = "img/introduction/contexte_hover.png" if e.data == "true" else "empty"
         page.update()
 
     navbar_img = Image(
@@ -34,24 +37,10 @@ def french_introduction_view(page: Page):
 
     navbar = Container(
         content= Stack([
-            Row([
-                Container(
-                    Text("Retour", font_family= "EB Garamond", color= "white", size= 18),
-                    on_click= events.go_french_menu,
-                    padding= 0,
-                    on_hover= handle_hover_navbar_left
-                ),
-                navbar_img,
-                Container(
-                    Text("Principal", font_family= "EB Garamond", color= "white", size= 18),
-                    on_click= events.go_home,
-                    padding= 0,
-                    on_hover= handle_hover_navbar_right
-                )
-            ], spacing= 0)
+            navbar_img,
         ]),
-        left= 420,
-        top= 500,
+        right= 90,
+        bottom= 23,
         padding= 0
     )
 
@@ -61,87 +50,74 @@ def french_introduction_view(page: Page):
             Container(
                 content= Stack(
                     [
-                        Image(
-                            src= "img/background.jpg",
-                            width= 800,
-                            height= 600
-                        ),
-                        introduction_img,
-                        Container(
-                            content= Text(
-                                "Introduction",
-                                font_family= "EB Garamond",
-                                color= "white",
-                                size= 62,
-                                weight= FontWeight.W_100
-                            ),
-                            margin= margin.only(left= 215, top= 60)
+                       introduction_img,
+                       Container(
+                           content= objectifs_img,
+                            width= 70,
+                            height= 70,
+                            right= 246,
+                            bottom= 154,
+                            on_click= events.go_french_introduction_objectifs,
+                            on_hover= handle_hover_introduction_objectifs,
                         ),
                         Container(
-                            content= Text(
-                                "Contexte",
-                                font_family= "EB Garamond",
-                                color= "white",
-                                size= 28,
-                                weight= FontWeight.W_100
-                            ),
-                            left= 405, 
-                            top= 140,
-                            width= 120,
-                            height= 50,
-                            on_click= events.go_french_introduction_contexte,
+                            width= 118,
+                            height= 32,
+                            right= 56,
+                            bottom= 130,
+                            on_click= events.go_french_introduction_objectifs,
+                            on_hover= handle_hover_introduction_objectifs,
                         ),
                         Container(
-                            content= Text(
-                                "Public",
-                                font_family= "EB Garamond",
-                                color= "white",
-                                size= 28,
-                                weight= FontWeight.W_100
-                            ),
-                            left= 160, 
-                            top= 340,
-                            width= 120,
-                            height= 50,
+                            content= public_img,
+                            width= 70,
+                            height= 70,
+                            left= 223, 
+                            top= 315,
                             on_click= events.go_french_introduction_public,
+                            on_hover= handle_hover_introduction_public,
                         ),
                         Container(
-                            content= Text(
-                                "Objectifs",
-                                font_family= "EB Garamond",
-                                color= "white",
-                                size= 28,
-                                weight= FontWeight.W_100
-                            ),
-                            right= 42,
-                            bottom= 110,
+                            width= 80,
+                            height= 32,
+                            left= 65,
+                            top= 355,
+                            on_click= events.go_french_introduction_public,
+                            on_hover= handle_hover_introduction_public,
+                        ),
+                        Container(
+                            content= contexte_img,
+                            width= 60,
+                            height= 70,
+                            right= 327,
+                            top= 174,
+                            on_click= events.go_french_introduction_contexte,
+                            on_hover= handle_hover_introduction_contexte,
+                        ),
+                        Container(
                             width= 120,
-                            height= 50,
+                            height= 32,
+                            right= 277,
+                            top= 100,
+                            on_click= events.go_french_introduction_contexte,
+                            on_hover= handle_hover_introduction_contexte,
                         ),
                         navbar,
                         Container(
-                            width= 45,
-                            height= 38,
-                            right= 240,
-                            bottom= 188,
-                            on_click= events.go_french_introduction_objectifs,
-                            on_hover= handle_hover_introduction_objectifs
+                            right= 22,
+                            bottom= 24,
+                            width= 143,
+                            height= 40,
+                            on_hover= handle_hover_navbar_right,
+                            on_click= events.go_home,
                         ),
                         Container(
-                            width= 45,
-                            height= 38,
-                            left= 312, 
-                            top= 318,
-                            on_click= events.go_french_introduction_public,
-                            on_hover= handle_hover_introduction_public
-                        ),
-                        Container(
-                            width= 38,
-                            height= 38,
-                            right= 298,
-                            top= 220,
-                            on_click= events.go_french_introduction_contexte,
-                            on_hover= handle_hover_introduction_contexte
+                            right= 185,
+                            bottom= 24,
+                            width= 123,
+                            height= 40,
+                            on_hover= handle_hover_navbar_left,
+                            on_click= events.go_french_menu,
                         ),
                     ],
                 ),

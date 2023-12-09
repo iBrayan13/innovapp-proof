@@ -17,24 +17,10 @@ def french_introduction_public_view(page: Page):
 
     navbar = Container(
         content= Stack([
-            Row([
-                Container(
-                    Text("Retour", font_family= "EB Garamond", color= "white", size= 18),
-                    on_click= events.go_french_introduction,
-                    padding= 0,
-                    on_hover= handle_hover_navbar_left
-                ),
-                navbar_img,
-                Container(
-                    Text("Principal", font_family= "EB Garamond", color= "white", size= 18),
-                    on_click= events.go_home,
-                    padding= 0,
-                    on_hover= handle_hover_navbar_right
-                )
-            ], spacing= 0)
+            navbar_img,
         ]),
-        left= 420,
-        top= 500,
+        right= 90,
+        bottom= 23,
         padding= 0
     )
 
@@ -44,26 +30,15 @@ def french_introduction_public_view(page: Page):
             Container(
                 content= Stack([
                     Image(
-                        src= "img/background.jpg",
-                        width= 800,
-                        height= 600
-                    ),
-                    Container(
-                        Image(
-                            src= "img/introduction/introduction_public_imgs.png",
-                            width= 80,
-                            height= 540
-                        ),
-                        margin= margin.only(left=20, top= 25)
+                        src= "img/introduction/introduction_public.png",
+                        width= 768,
+                        height= 576
                     ),
                     Container(
                         content= Stack([
                             Column([
-                                Text(
-                                    "Public",
-                                    size= 32,
-                                    color= "white",
-                                    font_family= "EB Garamond"
+                                Image(
+                                    src= "img/introduction/public_title.png",
                                 ),
                                 Container(
                                     Column([
@@ -77,7 +52,7 @@ def french_introduction_public_view(page: Page):
                                             ),
                                             Text(
                                                 "Les professionels des métiers et industries de l'artisanat.",
-                                                color="yellow",
+                                                color="#CECE63",
                                                 size= 18,
                                                 font_family= "EB Garamond"
                                             ),
@@ -92,7 +67,7 @@ def french_introduction_public_view(page: Page):
                                             ),
                                             Text(
                                                 "Les institutions publiques de tutelle et celles convergentes au secteur.",
-                                                color="yellow",
+                                                color="#CECE63",
                                                 size= 18,
                                                 font_family= "EB Garamond"
                                             ),
@@ -107,7 +82,7 @@ def french_introduction_public_view(page: Page):
                                             ),
                                             Text(
                                                 "Les institutions financieres et d'investissement.",
-                                                color="yellow",
+                                                color="#CECE63",
                                                 size= 18,
                                                 font_family= "EB Garamond"
                                             ),
@@ -122,7 +97,7 @@ def french_introduction_public_view(page: Page):
                                             ),
                                             Text(
                                                 "Les décideurs et opérateurs économiques en géneral.",
-                                                color="yellow",
+                                                color="#CECE63",
                                                 size= 18,
                                                 font_family= "EB Garamond"
                                             ),
@@ -137,7 +112,7 @@ def french_introduction_public_view(page: Page):
                                             ),
                                             Text(
                                                 "La presse et les groupes média.",
-                                                color="yellow",
+                                                color="#CECE63",
                                                 size= 18,
                                                 font_family= "EB Garamond"
                                             ),
@@ -153,7 +128,7 @@ def french_introduction_public_view(page: Page):
                                             ),
                                             Text(
                                                 "Les institutions culturelles et aca démiques nationales et\ninternationales.",
-                                                color="yellow",
+                                                color="#CECE63",
                                                 size= 18,
                                                 font_family= "EB Garamond"
                                             ),
@@ -168,7 +143,7 @@ def french_introduction_public_view(page: Page):
                                             ),
                                             Text(
                                                 "Le tourisme culturel: musées, sites touristiques, et Tour-Opérateurs.",
-                                                color="yellow",
+                                                color="#CECE63",
                                                 size= 18,
                                                 font_family= "EB Garamond"
                                             ),
@@ -183,7 +158,7 @@ def french_introduction_public_view(page: Page):
                                             ),
                                             Text(
                                                 "Les réseaux de distribution grand public.",
-                                                color="yellow",
+                                                color="#CECE63",
                                                 size= 18,
                                                 font_family= "EB Garamond"
                                             ),
@@ -191,15 +166,29 @@ def french_introduction_public_view(page: Page):
                                     ]),
                                     width=560,
                                     height= 360,
-                                    border_radius= 20,
                                     padding= 10,
-                                    bgcolor= "#4D0130"
                                 )
                             ])
                         ]),
                         margin= margin.only(left= 145, top= 80)
                     ),
-                    navbar
+                    navbar,
+                    Container(
+                        right= 22,
+                        bottom= 24,
+                        width= 143,
+                        height= 40,
+                        on_hover= handle_hover_navbar_right,
+                        on_click= events.go_home,
+                    ),
+                    Container(
+                        right= 185,
+                        bottom= 24,
+                        width= 123,
+                        height= 40,
+                        on_hover= handle_hover_navbar_left,
+                        on_click= events.go_french_introduction,
+                    ),
                 ])
             )
         ],

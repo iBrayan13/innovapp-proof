@@ -20,7 +20,7 @@ def home_view(page: Page):
             Container(
                 Stack([
                     Image(
-                        src= "img/background.jpg",
+                        src= "img/first_bg.png",
                         width= 800,
                         height= 600
                     ),
@@ -50,6 +50,42 @@ def home_view(page: Page):
                         on_hover= handle_hover_lang,
                         right= 10, 
                         bottom= 35
+                    ),
+                    Container(
+                        Row([
+                            Text(
+                                "English",
+                                font_family= "EB Garamond",
+                                size= 20,
+                                color= "white"
+                            ),
+                            Image(
+                                src= "img/language_btn.png",
+                                width= 100,
+                                height= 100
+                            ),
+                        ]),
+                        on_hover= handle_hover_lang,
+                        right= 10, 
+                        bottom= 135
+                    ),
+                    Container(
+                        Row([
+                            Text(
+                                "Español",
+                                font_family= "EB Garamond",
+                                size= 20,
+                                color= "white"
+                            ),
+                            Image(
+                                src= "img/language_btn.png",
+                                width= 100,
+                                height= 100
+                            ),
+                        ]),
+                        on_hover= handle_hover_lang,
+                        right= 10, 
+                        bottom= 235
                     ),
                     Container(
                         Column([

@@ -45,7 +45,7 @@ def french_view(page: Page):
                 content= Stack(
                     [
                         Image(
-                            src= "img/background.jpg",
+                            src= "img/first_bg.png",
                             width= 800,
                             height= 600
                         ),
@@ -125,9 +125,7 @@ def french_view(page: Page):
                             margin= margin.only(left= 110, top= 270),
                             width=548,
                             height= 220,
-                            border_radius= 20,
                             padding= 10,
-                            bgcolor= "#4D0130"
                         ),
                         navbar
                     ],

@@ -17,24 +17,10 @@ def french_introduction_objectifs_view(page: Page):
 
     navbar = Container(
         content= Stack([
-            Row([
-                Container(
-                    Text("Retour", font_family= "EB Garamond", color= "white", size= 18),
-                    on_click= events.go_french_introduction,
-                    padding= 0,
-                    on_hover= handle_hover_navbar_left
-                ),
-                navbar_img,
-                Container(
-                    Text("Principal", font_family= "EB Garamond", color= "white", size= 18),
-                    on_click= events.go_home,
-                    padding= 0,
-                    on_hover= handle_hover_navbar_right
-                )
-            ], spacing= 0)
+            navbar_img,
         ]),
-        left= 420,
-        bottom= 30,
+        right= 90,
+        bottom= 23,
         padding= 0
     )
 
@@ -44,26 +30,15 @@ def french_introduction_objectifs_view(page: Page):
             Container(
                 content= Stack([
                     Image(
-                        src= "img/background.jpg",
-                        width= 800,
-                        height= 600
-                    ),
-                    Container(
-                        Image(
-                            src= "img/introduction/introduction_objectifs_imgs.png",
-                            width= 80,
-                            height= 540
-                        ),
-                        margin= margin.only(left=20, top= 25)
+                        src= "img/introduction/introduction_objectifs.png",
+                        width= 768,
+                        height= 576
                     ),
                     Container(
                         content= Stack([
                             Column([
-                                Text(
-                                    "Objectifs",
-                                    size= 32,
-                                    color= "white",
-                                    font_family= "EB Garamond"
+                                Image(
+                                    src= "img/introduction/objectifs_title.png",
                                 ),
                                 Container(
                                     Column([
@@ -78,7 +53,7 @@ def french_introduction_objectifs_view(page: Page):
                                             ),
                                             Text(
                                                 "Itinéraire géographique de l'artisanat, a travers la diversité des\nrégions et des cultures.",
-                                                color="yellow",
+                                                color="#CECE63",
                                                 size= 18,
                                                 font_family= "EB Garamond"
                                             ),
@@ -93,7 +68,7 @@ def french_introduction_objectifs_view(page: Page):
                                             ),
                                             Text(
                                                 "Visite virtuelle des secteurs de l'artisanat.",
-                                                color="yellow",
+                                                color="#CECE63",
                                                 size= 18,
                                                 font_family= "EB Garamond"
                                             ),
@@ -108,7 +83,7 @@ def french_introduction_objectifs_view(page: Page):
                                             ),
                                             Text(
                                                 "Exploration multimédia des trésors des métiers d'art.",
-                                                color="yellow",
+                                                color="#CECE63",
                                                 size= 18,
                                                 font_family= "EB Garamond"
                                             ),
@@ -124,7 +99,7 @@ def french_introduction_objectifs_view(page: Page):
                                             ),
                                             Text(
                                                 "Reférencement des ceuvres, ou pieces universelles, a travers\nun catalogue interactif.",
-                                                color="yellow",
+                                                color="#CECE63",
                                                 size= 18,
                                                 font_family= "EB Garamond"
                                             ),
@@ -139,7 +114,7 @@ def french_introduction_objectifs_view(page: Page):
                                             ),
                                             Text(
                                                 "Moteur de Rechecche multi-criteres, et connexion internet.",
-                                                color="yellow",
+                                                color="#CECE63",
                                                 size= 18,
                                                 font_family= "EB Garamond"
                                             ),
@@ -155,7 +130,7 @@ def french_introduction_objectifs_view(page: Page):
                                             ),
                                             Text(
                                                 "Reperes économiques, liens utiles, guide practique et\ncarnet d'adresses",
-                                                color="yellow",
+                                                color="#CECE63",
                                                 size= 18,
                                                 font_family= "EB Garamond"
                                             ),
@@ -171,7 +146,7 @@ def french_introduction_objectifs_view(page: Page):
                                             ),
                                             Text(
                                                 "Plate-forme modele, prototype pour la réalisation d'un portail, a\nla fois de visibilité universelle et de commerce électronique des\nobjets d'art et de l'artisanat.",
-                                                color="yellow",
+                                                color="#CECE63",
                                                 size= 18,
                                                 font_family= "EB Garamond",
                                             ),
@@ -179,15 +154,29 @@ def french_introduction_objectifs_view(page: Page):
                                     ]),
                                     width=555,
                                     height= 420,
-                                    border_radius= 20,
                                     padding= 10,
-                                    bgcolor= "#4D0130"
                                 )
                             ])
                         ]),
                         margin= margin.only(left= 150, top= 45)
                     ),
-                    navbar
+                    navbar,
+                    Container(
+                        right= 22,
+                        bottom= 24,
+                        width= 143,
+                        height= 40,
+                        on_hover= handle_hover_navbar_right,
+                        on_click= events.go_home,
+                    ),
+                    Container(
+                        right= 185,
+                        bottom= 24,
+                        width= 123,
+                        height= 40,
+                        on_hover= handle_hover_navbar_left,
+                        on_click= events.go_french_introduction,
+                    ),
                 ])
             )
         ],

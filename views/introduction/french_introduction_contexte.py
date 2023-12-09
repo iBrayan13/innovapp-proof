@@ -44,26 +44,15 @@ def french_introduction_contexte_view(page: Page):
             Container(
                 content= Stack([
                     Image(
-                        src= "img/background.jpg",
-                        width= 800,
-                        height= 600
-                    ),
-                    Container(
-                        Image(
-                            src= "img/introduction/introduction_contexte_imgs.png",
-                            width= 80,
-                            height= 540
-                        ),
-                        margin= margin.only(left=20, top= 25)
+                        src= "img/introduction/introduction_contexte_bg.png",
+                        width= 768,
+                        height= 576
                     ),
                     Container(
                         content= Stack([
                             Column([
-                                Text(
-                                    "Contexte",
-                                    size= 32,
-                                    color= "white",
-                                    font_family= "EB Garamond"
+                                Image(
+                                    src= "img/introduction/contexte_title.png",
                                 ),
                                 Container(
                                     Column([
@@ -78,7 +67,7 @@ def french_introduction_contexte_view(page: Page):
                                             ),
                                             Text(
                                                 "Les outils multimédia inventent un nouveau langage d'expression:\nSomme subtile du livre, du cinéma et de la musique, ce Musée\nentend exprimer une tradition millénaire a travers l'ingéniosité du\nlangage multimédia.",
-                                                color="yellow",
+                                                color="#CECE63",
                                                 size= 18,
                                                 font_family= "EB Garamond"
                                             ),
@@ -94,7 +83,7 @@ def french_introduction_contexte_view(page: Page):
                                             ),
                                             Text(
                                                 "Rendre hommage au génie créateur de l'artisan marocain a travers\nune tradition unique, de par la richesse et l'ingéniosité de ses\nmétiers, de son savoir-faire et de ses prodiuts.",
-                                                color="yellow",
+                                                color="#CECE63",
                                                 size= 18,
                                                 font_family= "EB Garamond"
                                             ),
@@ -110,7 +99,7 @@ def french_introduction_contexte_view(page: Page):
                                             ),
                                             Text(
                                                 "La médiatisation de l'artisanat marocain, via les nouveaux supports\n électroniques, constitue une pierre angulaire dans la stratégie du\nGouvernement visant la mise a niveau du secteur et la promotion du\n produit national.",
-                                                color="yellow",
+                                                color="#CECE63",
                                                 size= 18,
                                                 font_family= "EB Garamond"
                                             ),
@@ -126,7 +115,7 @@ def french_introduction_contexte_view(page: Page):
                                             ),
                                             Text(
                                                 "A l'heure de la mondialisation, la mise en place des infrastructures\ndu commerce électronique implique, a l'amont, une stratégie média\n basée sur les supports de la Societé de l'information.",
-                                                color="yellow",
+                                                color="#CECE63",
                                                 size= 18,
                                                 font_family= "EB Garamond"
                                             ),
@@ -134,9 +123,7 @@ def french_introduction_contexte_view(page: Page):
                                     ]),
                                     width=555,
                                     height= 420,
-                                    border_radius= 20,
                                     padding= 10,
-                                    bgcolor= "#4D0130"
                                 )
                             ])
                         ]),
