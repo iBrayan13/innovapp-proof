@@ -17,24 +17,10 @@ def musee_base_decoration_view(page: Page):
 
     navbar = Container(
         content= Stack([
-            Row([
-                Container(
-                    Text("Retour", font_family= "EB Garamond", color= "white", size= 18),
-                    on_click= events.go_french_musee_base,
-                    padding= 0,
-                    on_hover= handle_hover_navbar_left
-                ),
-                navbar_img,
-                Container(
-                    Text("Principal", font_family= "EB Garamond", color= "white", size= 18),
-                    on_click= events.go_home,
-                    padding= 0,
-                    on_hover= handle_hover_navbar_right
-                )
-            ], spacing= 0)
+            navbar_img,
         ]),
-        left= 420,
-        top= 500,
+        right= 90,
+        bottom= 23,
         padding= 0
     )
 
@@ -44,126 +30,124 @@ def musee_base_decoration_view(page: Page):
             Container(
                 content= Stack([
                     Image(
-                        src= "img/background.jpg",
-                        width= 800,
-                        height= 600
-                    ),
-                    Container(
-                        Image(
-                            src= "img/musee/musee_base_decoration_imgs.png",
-                            width= 80,
-                            height= 540
-                        ),
-                        margin= margin.only(left=20, top= 25)
+                        src= "img/musee/base_decoration_bg.png",
+                        width= 768,
+                        height= 576
                     ),
                     Container(
                         content= Stack([
-                            Column([
-                                Text(
-                                    "Les arts de la décoration",
-                                    size= 32,
-                                    color= "white",
-                                    font_family= "EB Garamond"
-                                ),
-                                Container(
-                                    Column([
-                                        Container(
-                                            Row([
-                                                Container(
-                                                    Image(
-                                                        src= "img/menu_point.png",
-                                                        width= 30,
-                                                        height= 30,
-                                                    )
-                                                ),
-                                                Text(
-                                                    "Le zellij.",
-                                                    color="yellow",
-                                                    size= 20,
-                                                    font_family= "EB Garamond"
-                                                ),
-                                            ]),
-                                        ),
-                                        Container(
-                                            Row([
-                                                Container(
-                                                    Image(
-                                                        src= "img/menu_point.png",
-                                                        width= 30,
-                                                        height= 30,
-                                                    )
-                                                ),
-                                                Text(
-                                                    "Le patre ciselé.",
-                                                    color="yellow",
-                                                    size= 20,
-                                                    font_family= "EB Garamond"
-                                                ),
-                                            ]),
-                                        ),
-                                        Container(
-                                            Row([
-                                                Container(
-                                                    Image(
-                                                        src= "img/menu_point.png",
-                                                        width= 30,
-                                                        height= 30,
-                                                    )
-                                                ),
-                                                Text(
-                                                    "Le bois peint et le bois sculpté.",
-                                                    color="yellow",
-                                                    size= 20,
-                                                    font_family= "EB Garamond"
-                                                ),
-                                            ]),
-                                        ),
-                                        Container(
-                                            Row([
-                                                Container(
-                                                    Image(
-                                                        src= "img/menu_point.png",
-                                                        width= 30,
-                                                        height= 30,
-                                                    )
-                                                ),
-                                                Text(
-                                                    "Le marbre.",
-                                                    color="yellow",
-                                                    size= 20,
-                                                    font_family= "EB Garamond"
-                                                ),
-                                            ]),
-                                        ),
-                                        Container(
-                                            Row([
-                                                Container(
-                                                    Image(
-                                                        src= "img/menu_point.png",
-                                                        width= 30,
-                                                        height= 30,
-                                                    )
-                                                ),
-                                                Text(
-                                                    "Les Chemmassiat.",
-                                                    color="yellow",
-                                                    size= 20,
-                                                    font_family= "EB Garamond"
-                                                ),
-                                            ]),
-                                        ),
-                                    ]),
-                                    width= 400,
-                                    height= 220,
-                                    border_radius= 20,
-                                    padding= 10,
-                                    bgcolor= "#4D0130"
-                                )
-                            ])
+                            Container(
+                                Column([
+                                    Container(
+                                        Row([
+                                            Container(
+                                                Image(
+                                                    src= "img/menu_point.png",
+                                                    width= 30,
+                                                    height= 30,
+                                                )
+                                            ),
+                                            Text(
+                                                "Le zellij.",
+                                                color="#CECE63",
+                                                size= 20,
+                                                font_family= "EB Garamond"
+                                            ),
+                                        ]),
+                                    ),
+                                    Container(
+                                        Row([
+                                            Container(
+                                                Image(
+                                                    src= "img/menu_point.png",
+                                                    width= 30,
+                                                    height= 30,
+                                                )
+                                            ),
+                                            Text(
+                                                "Le patre ciselé.",
+                                                color="#CECE63",
+                                                size= 20,
+                                                font_family= "EB Garamond"
+                                            ),
+                                        ]),
+                                    ),
+                                    Container(
+                                        Row([
+                                            Container(
+                                                Image(
+                                                    src= "img/menu_point.png",
+                                                    width= 30,
+                                                    height= 30,
+                                                )
+                                            ),
+                                            Text(
+                                                "Le bois peint et le bois sculpté.",
+                                                color="#CECE63",
+                                                size= 20,
+                                                font_family= "EB Garamond"
+                                            ),
+                                        ]),
+                                    ),
+                                    Container(
+                                        Row([
+                                            Container(
+                                                Image(
+                                                    src= "img/menu_point.png",
+                                                    width= 30,
+                                                    height= 30,
+                                                )
+                                            ),
+                                            Text(
+                                                "Le marbre.",
+                                                color="#CECE63",
+                                                size= 20,
+                                                font_family= "EB Garamond"
+                                            ),
+                                        ]),
+                                    ),
+                                    Container(
+                                        Row([
+                                            Container(
+                                                Image(
+                                                    src= "img/menu_point.png",
+                                                    width= 30,
+                                                    height= 30,
+                                                )
+                                            ),
+                                            Text(
+                                                "Les Chemmassiat.",
+                                                color="#CECE63",
+                                                size= 20,
+                                                font_family= "EB Garamond"
+                                            ),
+                                        ]),
+                                    ),
+                                ]),
+                                width= 400,
+                                height= 220,
+                                padding= 10,
+                            )
                         ]),
-                        margin= margin.only(left= 145, top= 130)
+                        margin= margin.only(left= 175, top= 170)
                     ),
-                    navbar
+                    navbar,
+                    Container(
+                        right= 22,
+                        bottom= 24,
+                        width= 143,
+                        height= 40,
+                        on_hover= handle_hover_navbar_right,
+                        on_click= events.go_home,
+                    ),
+                    Container(
+                        right= 185,
+                        bottom= 24,
+                        width= 123,
+                        height= 40,
+                        on_hover= handle_hover_navbar_left,
+                        on_click= events.go_french_musee_base,
+                    ),
                 ])
             )
         ],
