@@ -17,24 +17,10 @@ def eartisanat_solutions_view(page: Page):
 
     navbar = Container(
         content= Stack([
-            Row([
-                Container(
-                    Text("Retour", font_family= "EB Garamond", color= "white", size= 18),
-                    on_click= events.go_french_eartisanat,
-                    padding= 0,
-                    on_hover= handle_hover_navbar_left
-                ),
-                navbar_img,
-                Container(
-                    Text("Principal", font_family= "EB Garamond", color= "white", size= 18),
-                    on_click= events.go_home,
-                    padding= 0,
-                    on_hover= handle_hover_navbar_right
-                )
-            ], spacing= 0)
+            navbar_img,
         ]),
-        left= 420,
-        top= 500,
+        right= 90,
+        bottom= 23,
         padding= 0
     )
 
@@ -44,31 +30,27 @@ def eartisanat_solutions_view(page: Page):
             Container(
                 content= Stack([
                     Image(
-                        src= "img/background.jpg",
-                        width= 800,
-                        height= 600
+                        src= "img/eartisanat/eartisanat_solutions_bg.png",
+                        width= 768,
+                        height= 576
+                    ),
+                    navbar,
+                    Container(
+                        right= 22,
+                        bottom= 24,
+                        width= 143,
+                        height= 40,
+                        on_hover= handle_hover_navbar_right,
+                        on_click= events.go_home,
                     ),
                     Container(
-                        content= Stack([
-                            Column([
-                                Text(
-                                    "Programmation de solutions de E-comerce\nCommande en ligne",
-                                    size= 32,
-                                    color= "white",
-                                    font_family= "EB Garamond"
-                                ),
-                                Container(
-                                    width= 270,
-                                    height= 140,
-                                    border_radius= 20,
-                                    padding= 10,
-                                    #bgcolor= "#4D0130"
-                                )
-                            ])
-                        ]),
-                        margin= margin.only(left= 145, top= 50)
+                        right= 185,
+                        bottom= 24,
+                        width= 123,
+                        height= 40,
+                        on_hover= handle_hover_navbar_left,
+                        on_click= events.go_french_eartisanat,
                     ),
-                    navbar
                 ])
             )
         ],

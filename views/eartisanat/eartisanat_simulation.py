@@ -44,117 +44,99 @@ def eartisanat_simulation_view(page: Page):
             Container(
                 content= Stack([
                     Image(
-                        src= "img/background.jpg",
-                        width= 800,
-                        height= 600
-                    ),
-                    Container(
-                        Image(
-                            src= "img/eartisanat/eartisanat_simulation_imgs.png",
-                            width= 80,
-                            height= 540
-                        ),
-                        margin= margin.only(left=20, top= 25)
+                        src= "img/eartisanat/eartisanat_simulation_bg.png",
+                        width= 768,
+                        height= 576
                     ),
                     Container(
                         content= Stack([
-                            Column([
-                                Text(
-                                    "Simulation de maison marocaine en 3D",
-                                    size= 32,
-                                    color= "white",
-                                    font_family= "EB Garamond"
-                                ),
-                                Container(
-                                    Column([
-                                        Row([
-                                            Container(
-                                                Image(
-                                                    src= "img/menu_point.png",
-                                                    width= 30,
-                                                    height= 30,
-                                                ),
-                                                margin= margin.only(bottom= 25)
+                            Container(
+                                Column([
+                                    Row([
+                                        Container(
+                                            Image(
+                                                src= "img/menu_point.png",
+                                                width= 30,
+                                                height= 30,
                                             ),
-                                            Text(
-                                                "Le musée virtuel propose un menu de CAO pour la décoration\ninteractive.",
-                                                color="yellow",
-                                                size= 18,
-                                                font_family= "EB Garamond"
-                                            ),
-                                        ]),
-                                        Row([
-                                            Container(
-                                                Image(
-                                                    src= "img/menu_point.png",
-                                                    width= 30,
-                                                    height= 30,
-                                                )
-                                            ),
-                                            Text(
-                                                "Des modeles d'habitat, afin d'essayer diverses proposition de Design.",
-                                                color="yellow",
-                                                size= 18,
-                                                font_family= "EB Garamond"
-                                            ),
-                                        ]),
-                                        Row([
-                                            Container(
-                                                Image(
-                                                    src= "img/menu_point.png",
-                                                    width= 30,
-                                                    height= 30,
-                                                ),
-                                                margin= margin.only(bottom= 25)
-                                            ),
-                                            Text(
-                                                "Des produits de l'Artisanat comme Menu d'agencement et\nd'embellissement.",
-                                                color="yellow",
-                                                size= 18,
-                                                font_family= "EB Garamond"
-                                            ),
-                                        ]),
-                                        Row([
-                                            Container(
-                                                Image(
-                                                    src= "img/menu_point.png",
-                                                    width= 30,
-                                                    height= 30,
-                                                )
-                                            ),
-                                            Text(
-                                                "De l'architecture et des éléments de décoration au bout de la souris.",
-                                                color="yellow",
-                                                size= 18,
-                                                font_family= "EB Garamond"
-                                            ),
-                                        ]),
-                                        Row([
-                                            Container(
-                                                Image(
-                                                    src= "img/menu_point.png",
-                                                    width= 30,
-                                                    height= 30,
-                                                ),
-                                                margin= margin.only(bottom= 25)
-                                            ),
-                                            Text(
-                                                "Une base de données multi-criteres controle l'importation les objets\net leur agencement.",
-                                                color="yellow",
-                                                size= 18,
-                                                font_family= "EB Garamond"
-                                            ),
-                                        ]),
+                                            margin= margin.only(bottom= 25)
+                                        ),
+                                        Text(
+                                            "Le musée virtuel propose un menu de CAO pour la décoration\ninteractive.",
+                                            color="#CCC424",
+                                            size= 18,
+                                            font_family= "EB Garamond"
+                                        ),
                                     ]),
-                                    width=565,
-                                    height= 295,
-                                    border_radius= 20,
-                                    padding= 10,
-                                    bgcolor= "#4D0130"
-                                )
-                            ])
+                                    Row([
+                                        Container(
+                                            Image(
+                                                src= "img/menu_point.png",
+                                                width= 30,
+                                                height= 30,
+                                            )
+                                        ),
+                                        Text(
+                                            "Des modeles d'habitat, afin d'essayer diverses proposition de Design.",
+                                            color="#CCC424",
+                                            size= 18,
+                                            font_family= "EB Garamond"
+                                        ),
+                                    ]),
+                                    Row([
+                                        Container(
+                                            Image(
+                                                src= "img/menu_point.png",
+                                                width= 30,
+                                                height= 30,
+                                            ),
+                                            margin= margin.only(bottom= 25)
+                                        ),
+                                        Text(
+                                            "Des produits de l'Artisanat comme Menu d'agencement et\nd'embellissement.",
+                                            color="#CCC424",
+                                            size= 18,
+                                            font_family= "EB Garamond"
+                                        ),
+                                    ]),
+                                    Row([
+                                        Container(
+                                            Image(
+                                                src= "img/menu_point.png",
+                                                width= 30,
+                                                height= 30,
+                                            )
+                                        ),
+                                        Text(
+                                            "De l'architecture et des éléments de décoration au bout de la souris.",
+                                            color="#CCC424",
+                                            size= 18,
+                                            font_family= "EB Garamond"
+                                        ),
+                                    ]),
+                                    Row([
+                                        Container(
+                                            Image(
+                                                src= "img/menu_point.png",
+                                                width= 30,
+                                                height= 30,
+                                            ),
+                                            margin= margin.only(bottom= 25)
+                                        ),
+                                        Text(
+                                            "Une base de données multi-criteres controle l'importation les objets\net leur agencement.",
+                                            color="#CCC424",
+                                            size= 18,
+                                            font_family= "EB Garamond"
+                                        ),
+                                    ]),
+                                ]),
+                                width=565,
+                                height= 295,
+                                padding= 10,
+                            )
                         ]),
-                        margin= margin.only(left= 145, top= 100)
+                        margin= margin.only(left= 175, top= 140)
                     ),
                     navbar
                 ])
