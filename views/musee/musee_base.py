@@ -48,115 +48,97 @@ def musee_base_view(page: Page):
             Container(
                 content= Stack([
                     Image(
-                        src= "img/background.jpg",
-                        width= 800,
-                        height= 600
-                    ),
-                    Container(
-                        Image(
-                            src= "img/musee/musee_base_imgs.png",
-                            width= 80,
-                            height= 540
-                        ),
-                        margin= margin.only(left=20, top= 25)
+                        src= "img/musee/musee_base_bg.png",
+                        width= 768,
+                        height= 576
                     ),
                     Container(
                         content= Stack([
-                            Column([
-                                Text(
-                                    "Base de données représentative\net informative",
-                                    size= 32,
-                                    color= "white",
-                                    font_family= "EB Garamond"
-                                ),
-                                Container(
-                                    Column([
-                                        Container(
-                                            Row([
-                                                Container(
-                                                    Image(
-                                                        src= "img/menu_point.png",
-                                                        width= 30,
-                                                        height= 30,
-                                                    )
-                                                ),
-                                                Text(
-                                                    "Les arts de la décoration",
-                                                    color="yellow",
-                                                    size= 20,
-                                                    font_family= "EB Garamond"
-                                                ),
-                                            ]),
-                                            on_click = events.go_french_musee_base_decoration,
-                                            on_hover= handle_hover
-                                        ),
-                                        Container(
-                                            Row([
-                                                Container(
-                                                    Image(
-                                                        src= "img/menu_point.png",
-                                                        width= 30,
-                                                        height= 30,
-                                                    )
-                                                ),
-                                                Text(
-                                                    "Les arts de la parure",
-                                                    color="yellow",
-                                                    size= 20,
-                                                    font_family= "EB Garamond"
-                                                ),
-                                            ]),
-                                            on_click= events.go_french_musee_base_parure,
-                                            on_hover= handle_hover
-                                        ),
-                                        Container(
-                                            Row([
-                                                Container(
-                                                    Image(
-                                                        src= "img/menu_point.png",
-                                                        width= 30,
-                                                        height= 30,
-                                                    )
-                                                ),
-                                                Text(
-                                                    "Les arts du métal",
-                                                    color="yellow",
-                                                    size= 20,
-                                                    font_family= "EB Garamond"
-                                                ),
-                                            ]),
-                                            on_click= events.go_french_musee_base_metal,
-                                            on_hover= handle_hover
-                                        ),
-                                        Container(
-                                            Row([
-                                                Container(
-                                                    Image(
-                                                        src= "img/menu_point.png",
-                                                        width= 30,
-                                                        height= 30,
-                                                    )
-                                                ),
-                                                Text(
-                                                    "Les arts de la maison et du quotidien",
-                                                    color="yellow",
-                                                    size= 20,
-                                                    font_family= "EB Garamond"
-                                                ),
-                                            ]),
-                                            on_click= events.go_french_musee_base_maison,
-                                            on_hover= handle_hover
-                                        ),
-                                    ]),
-                                    width= 400,
-                                    height= 175,
-                                    border_radius= 20,
-                                    padding= 10,
-                                    bgcolor= "#4D0130"
-                                )
-                            ])
+                            Container(
+                                Column([
+                                    Container(
+                                        Row([
+                                            Container(
+                                                Image(
+                                                    src= "img/menu_point.png",
+                                                    width= 30,
+                                                    height= 30,
+                                                )
+                                            ),
+                                            Text(
+                                                "Les arts de la décoration",
+                                                color="#CECE63",
+                                                size= 20,
+                                                font_family= "EB Garamond"
+                                            ),
+                                        ]),
+                                        on_click = events.go_french_musee_base_decoration,
+                                        on_hover= handle_hover
+                                    ),
+                                    Container(
+                                        Row([
+                                            Container(
+                                                Image(
+                                                    src= "img/menu_point.png",
+                                                    width= 30,
+                                                    height= 30,
+                                                )
+                                            ),
+                                            Text(
+                                                "Les arts de la parure",
+                                                color="#CECE63",
+                                                size= 20,
+                                                font_family= "EB Garamond"
+                                            ),
+                                        ]),
+                                        on_click= events.go_french_musee_base_parure,
+                                        on_hover= handle_hover
+                                    ),
+                                    Container(
+                                        Row([
+                                            Container(
+                                                Image(
+                                                    src= "img/menu_point.png",
+                                                    width= 30,
+                                                    height= 30,
+                                                )
+                                            ),
+                                            Text(
+                                                "Les arts du métal",
+                                                color="#CECE63",
+                                                size= 20,
+                                                font_family= "EB Garamond"
+                                            ),
+                                        ]),
+                                        on_click= events.go_french_musee_base_metal,
+                                        on_hover= handle_hover
+                                    ),
+                                    Container(
+                                        Row([
+                                            Container(
+                                                Image(
+                                                    src= "img/menu_point.png",
+                                                    width= 30,
+                                                    height= 30,
+                                                )
+                                            ),
+                                            Text(
+                                                "Les arts de la maison et du quotidien",
+                                                color="#CECE63",
+                                                size= 20,
+                                                font_family= "EB Garamond"
+                                            ),
+                                        ]),
+                                        on_click= events.go_french_musee_base_maison,
+                                        on_hover= handle_hover
+                                    ),
+                                ]),
+                                width= 400,
+                                height= 175,
+                                padding= 10,
+                            )
                         ]),
-                        margin= margin.only(left= 145, top= 130)
+                        margin= margin.only(left= 175, top= 170)
                     ),
                     navbar
                 ])

@@ -14,7 +14,7 @@ def musee_view(page: Page):
         e.control.update()
 
     bg = Image(
-        src= "img/background.jpg",
+        src= "img/musee/musee_bg.png",
         width= 800,
         height= 600
     )
@@ -56,15 +56,6 @@ def musee_view(page: Page):
     body = Stack(
         [
             bg,
-            Text(
-                "Musée Virtuel",
-                size= 48,
-                weight= FontWeight.W_200,
-                color= "white",
-                top= 15,
-                left= 60,
-                font_family= "EB Garamond"
-            ),
             navbar,
             Container(
                 Column(
