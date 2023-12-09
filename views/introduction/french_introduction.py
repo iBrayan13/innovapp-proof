@@ -11,14 +11,14 @@ def french_introduction_view(page: Page):
         width= 800,
         height= 600
     )
-    def handle_hover_introduction(e):
-        if e.control.content.value == "Contexte":
-            introduction_img.src = "img/introduction/introduction_contexte_hover.png" if e.data == "true" else "img/introduction/introduction.png"
-        elif e.control.content.value == "Public":
-            introduction_img.src = "img/introduction/introduction_public_hover.png" if e.data == "true" else "img/introduction/introduction.png"
-        elif e.control.content.value == "Objectifs":
-            introduction_img.src = "img/introduction/introduction_objectifs_hover.png" if e.data == "true" else "img/introduction/introduction.png"
-
+    def handle_hover_introduction_objectifs(e):
+        introduction_img.src = "img/introduction/introduction_objectifs_hover.png" if e.data == "true" else "img/introduction/introduction.png"
+        page.update()
+    def handle_hover_introduction_public(e):
+        introduction_img.src = "img/introduction/introduction_public_hover.png" if e.data == "true" else "img/introduction/introduction.png"
+        page.update()
+    def handle_hover_introduction_contexte(e):
+        introduction_img.src = "img/introduction/introduction_contexte_hover.png" if e.data == "true" else "img/introduction/introduction.png"
         page.update()
 
     navbar_img = Image(
@@ -90,7 +90,6 @@ def french_introduction_view(page: Page):
                             width= 120,
                             height= 50,
                             on_click= events.go_french_introduction_contexte,
-                            on_hover= handle_hover_introduction
                         ),
                         Container(
                             content= Text(
@@ -105,7 +104,6 @@ def french_introduction_view(page: Page):
                             width= 120,
                             height= 50,
                             on_click= events.go_french_introduction_public,
-                            on_hover= handle_hover_introduction
                         ),
                         Container(
                             content= Text(
@@ -119,10 +117,32 @@ def french_introduction_view(page: Page):
                             bottom= 110,
                             width= 120,
                             height= 50,
-                            on_click= events.go_french_introduction_objectifs,
-                            on_hover= handle_hover_introduction
                         ),
-                        navbar
+                        navbar,
+                        Container(
+                            width= 45,
+                            height= 38,
+                            right= 240,
+                            bottom= 188,
+                            on_click= events.go_french_introduction_objectifs,
+                            on_hover= handle_hover_introduction_objectifs
+                        ),
+                        Container(
+                            width= 45,
+                            height= 38,
+                            left= 312, 
+                            top= 318,
+                            on_click= events.go_french_introduction_public,
+                            on_hover= handle_hover_introduction_public
+                        ),
+                        Container(
+                            width= 38,
+                            height= 38,
+                            right= 298,
+                            top= 220,
+                            on_click= events.go_french_introduction_contexte,
+                            on_hover= handle_hover_introduction_contexte
+                        ),
                     ],
                 ),
                 width= page.width,
