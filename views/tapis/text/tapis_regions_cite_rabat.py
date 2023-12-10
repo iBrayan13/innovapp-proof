@@ -1,6 +1,6 @@
 textList = [
     "    Jadis lorsqu'on parlait de la",
-    "production de liartisanat des tapis",
+    "production de l'artisanat des tapis",
     "dans la ville de Rabat (photo1), en",
     "faisait allusion d'une maniére tacite",
     "a celle de la ville de Salé. Si",
