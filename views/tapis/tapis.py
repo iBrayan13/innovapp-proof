@@ -7,16 +7,10 @@ def tapis_view(page: Page):
     events = Events(page)
 
     bg = Image(
-        src= "img/background.jpg",
-        width= 800,
-        height= 600
+        src= "img/tapis/tapis_bg.png",
+        width= 768,
+        height= 576
     )
-
-    def handle_hover_cont(e):
-        e.control.content.controls[1].color = "yellow" if e.data == "true" else "white"
-        src_img = e.control.content.controls[0].content.src
-        e.control.content.controls[0].content.src = f"{src_img[0 : len(src_img) - 7]}hover_img.png" if e.data == "true" else f"{src_img[0 : len(src_img) - 13]}img.png"
-        e.control.update()
 
     navbar_img = Image(
         src= "img/navbar.png"
@@ -31,201 +25,181 @@ def tapis_view(page: Page):
 
     navbar = Container(
         content= Stack([
-            Row([
-                Container(
-                    Text("Retour", font_family= "EB Garamond", color= "white", size= 18),
-                    on_click= events.go_french_menu,
-                    padding= 0,
-                    on_hover= handle_hover_navbar_left
-                ),
-                navbar_img,
-                Container(
-                    Text("Principal", font_family= "EB Garamond", color= "white", size= 18),
-                    on_click= events.go_home,
-                    padding= 0,
-                    on_hover= handle_hover_navbar_right
-                )
-            ], spacing= 0)
+            navbar_img,
         ]),
-        left= 420,
-        top= 500,
+        right= 90,
+        bottom= 23,
         padding= 0
     )
+
+    # HOVER IMAGES
+    historie_img = Image(
+        src= "empty",
+        width= 75,
+
+        left= 50,
+        bottom= 100,
+    )
+    def historie_hover(e):
+        historie_img.src = "img/tapis/le_tapis_histoire_hover_img.png" if e.data == "true" else "empty"
+        page.update()
+    
+    regions_img = Image(
+        src= "empty",
+        width= 75,
+
+        left= 128,
+        bottom= 100,
+    )
+    def regions_hover(e):
+        regions_img.src = "img/tapis/le_tapis_regions_hover_img.png" if e.data == "true" else "empty"
+        page.update()
+    
+    culture_img = Image(
+        src= "empty",
+        width= 75,
+
+        left= 262,
+        bottom= 96,
+    )
+    def culture_hover(e):
+        culture_img.src = "img/tapis/le_tapis_culture_hover_img.png" if e.data == "true" else "empty"
+        page.update()
+    
+    art_img = Image(
+        src= "empty",
+        width= 75,
+
+        right= 299,
+        bottom= 100,
+    )
+    def art_hover(e):
+        art_img.src = "img/tapis/le_tapis_art_hover_img.png" if e.data == "true" else "empty"
+        page.update()
+    
+    galerie_img = Image(
+        src= "empty",
+        width= 75,
+
+        right= 166,
+        bottom= 100,
+    )
+    def galerie_hover(e):
+        galerie_img.src = "img/tapis/le_tapis_galerie_hover_img.png" if e.data == "true" else "empty"
+        page.update()
 
     body = Container(
         Stack([
             bg,
-            navbar,
-            Column(
-                [
-                    Text(
-                        "Le Tapis",
-                        font_family= "EB Garamond",
-                        size= 48,
-                        color= "white"
-                    ),
-                    Text(
-                        "Project pilote",
-                        font_family= "EB Garamond",
-                        size= 30,
-                        color= "white"
-                    ),
-                ],
-                spacing= 0,
-                left= 40,
-                top= 20
-            ),
+
+            # HOVERS
             Container(
-                Column(
-                    [
-                        Container(
-                            Image(
-                                src= "img/tapis/le_tapis_histoire_img.png",
-                                width= 75,
-                                height= 75
-                            ),
-                            margin= margin.only(left= 15)
-                        ),
-                        Text(
-                            "De l'Histoire",
-                            font_family= "EB Garamond",
-                            color= "white",
-                            size= 20
-                        ),
-                    ],
-                    spacing= 8,
-                ),
-                top= 190,
-                left= 120,
-                bgcolor= "#4D0130",
-                border_radius= 20,
-                padding= 10,
-                width= 130,
-                height= 130,
-                on_hover= handle_hover_cont,
-                on_click = events.go_french_tapis_histoire
+                width= 120,
+                height= 25,
+                left= 20,
+                top= 159,
+                on_click= events.go_french_tapis_histoire,
+                on_hover= historie_hover,
             ),
+            historie_img,
             Container(
-                Column(
-                    [
-                        Container(
-                            Image(
-                                src= "img/tapis/le_tapis_regions_img.png",
-                                width= 75,
-                                height= 75
-                            ),
-                            margin= margin.only(left= 15)
-                        ),
-                        Text(
-                            "Des Régions",
-                            font_family= "EB Garamond",
-                            color= "white",
-                            size= 20
-                        ),
-                    ],
-                    spacing= 8,
-                ),
-                bottom= 140,
-                left= 210,
-                bgcolor= "#4D0130",
-                border_radius= 20,
-                padding= 10,
-                width= 130,
-                height= 130,
-                on_hover= handle_hover_cont,
-                on_click= events.go_french_tapis_regions_cite
-            ),
-            Container(
-                Column(
-                    [
-                        Container(
-                            Image(
-                                src= "img/tapis/le_tapis_culture_img.png",
-                                width= 75,
-                                height= 75
-                            ),
-                            margin= margin.only(left= 20)
-                        ),
-                        Text(
-                            "De la Culture",
-                            font_family= "EB Garamond",
-                            color= "white",
-                            size= 20
-                        ),
-                    ],
-                    spacing= 8,
-                ),
-                top= 190,
-                left= 300,
-                bgcolor= "#4D0130",
-                border_radius= 20,
-                padding= 10,
-                width= 135,
-                height= 130,
-                on_hover= handle_hover_cont,
-                on_click= events.go_french_tapis_culture
-            ),
-            Container(
-                Column(
-                    [
-                        Container(
-                            Image(
-                                src= "img/tapis/le_tapis_art_img.png",
-                                width= 75,
-                                height= 75
-                            ),
-                            margin= margin.only(left= 17)
-                        ),
-                        Text(
-                            "     De l'Art",
-                            font_family= "EB Garamond",
-                            color= "white",
-                            size= 20
-                        ),
-                    ],
-                    spacing= 8,
-                ),
-                bottom= 140,
-                right= 240,
-                bgcolor= "#4D0130",
-                border_radius= 20,
-                padding= 10,
-                width= 130,
-                height= 130,
-                on_hover= handle_hover_cont,
-                on_click= events.go_french_tapis_art_citadin
-            ),
-            Container(
-                Column(
-                    [
-                        Container(
-                            Image(
-                                src= "img/tapis/le_tapis_galerie_img.png",
-                                width= 75,
-                                height= 75
-                            ),
-                            margin= margin.only(left= 32)
-                        ),
-                        Text(
-                            "Galerie Virtuelle",
-                            font_family= "EB Garamond",
-                            color= "white",
-                            size= 20
-                        ),
-                    ],
-                    spacing= 8,
-                ),
-                top= 190,
-                right= 120,
-                bgcolor= "#4D0130",
-                border_radius= 20,
-                padding= 10,
-                width= 160,
-                height= 130,
-                on_hover= handle_hover_cont,
-                on_click= events.go_french_tapis_galerie_env
+                width= 58,
+                height= 60,
+                left= 59,
+                bottom= 109,
+                on_click= events.go_french_tapis_histoire,
+                on_hover= historie_hover,
             ),
 
+            Container(
+                width= 115,
+                height= 25,
+                left= 135,
+                top= 212,
+                on_click= events.go_french_tapis_regions_cite,
+                on_hover= regions_hover,
+            ),
+            regions_img,
+            Container(
+                width= 58,
+                height= 60,
+                left= 135,
+                bottom= 109,
+                on_click= events.go_french_tapis_regions_cite,
+                on_hover= regions_hover,
+            ),
+
+            Container(
+                width= 127,
+                height= 25,
+                left= 262,
+                top= 269,
+                on_click= events.go_french_tapis_culture,
+                on_hover= culture_hover,
+            ),
+            culture_img,
+            Container(
+                width= 58,
+                height= 60,
+                left= 269,
+                bottom= 105,
+                on_click= events.go_french_tapis_culture,
+                on_hover= culture_hover,
+            ),
+
+            Container(
+                width= 75,
+                height= 25,
+                right= 294,
+                bottom= 225,
+                on_click= events.go_french_tapis_art_citadin,
+                on_hover= art_hover,
+            ),
+            art_img,
+            Container(
+                width= 58,
+                height= 60,
+                right= 307,
+                bottom= 106,
+                on_click= events.go_french_tapis_art_citadin,
+                on_hover= art_hover,
+            ),
+
+            Container(
+                width= 160,
+                height= 25,
+                right= 84,
+                bottom= 171,
+                on_click= events.go_french_tapis_galerie_env,
+                on_hover= galerie_hover,
+            ),
+            galerie_img,
+            Container(
+                width= 58,
+                height= 60,
+                right= 175,
+                bottom= 108,
+                on_click= events.go_french_tapis_galerie_env,
+                on_hover= galerie_hover,
+            ),
+
+            navbar,
+            Container(
+                right= 22,
+                bottom= 24,
+                width= 143,
+                height= 40,
+                on_hover= handle_hover_navbar_right,
+                on_click= events.go_home,
+            ),
+            Container(
+                right= 185,
+                bottom= 24,
+                width= 123,
+                height= 40,
+                on_hover= handle_hover_navbar_left,
+                on_click= events.go_french_menu,
+            ),
         ])
     )
 
