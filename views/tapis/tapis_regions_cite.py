@@ -1,6 +1,5 @@
-from flet import Page, View, Container, Stack, Row, Column, Image, Text, MainAxisAlignment, CrossAxisAlignment, border_radius, padding, margin
+from flet import Page, View, Container, Stack, Row, Column, Image, Text, MainAxisAlignment, CrossAxisAlignment, padding, margin
 from utils.events import Events
-from time import sleep
 
 # Text
 from .text import tapis_regions_cite_rabat, tapis_regions_cite_mediouna, tapis_regions_cite_fes
@@ -27,9 +26,9 @@ def tapis_regions_cite_view(page: Page):
     events = Events(page)
 
     bg = Image(
-        src= "img/background.jpg",
-        width= 800,
-        height= 600
+        src= "img/tapis/regions/tapis_regions_bg.png",
+        width= 768,
+        height= 576
     )
 
     navbar_img = Image(
@@ -64,32 +63,6 @@ def tapis_regions_cite_view(page: Page):
         top= 500,
         padding= 0
     )
-
-    def show_hover_galerie(e):
-        body.content.controls[7] = galerie_bar
-        e.control.on_hover = None
-        page.update()
-
-        sleep(3)
-
-        body.content.controls[7] = Container()
-        e.control.on_hover = show_hover_galerie
-        page.update()
-
-    def show_hover_art(e):
-        body.content.controls[4] = art_page
-        e.control.content.color = "orange"
-        e.control.on_hover = None
-        page.update()
-
-        sleep(3)
-
-        body.content.controls[4] = Container()
-        e.control.on_hover = show_hover_art
-        e.control.content.color = "white"
-        art_page.content.controls[0].content.color = "white"
-        art_page.content.controls[1].content.color = "white"
-        page.update()
 
     def handle_color(e):
         e.control.content.color = "orange" if e.data == "true" else "white"
@@ -131,7 +104,8 @@ def tapis_regions_cite_view(page: Page):
                     color= "white",
                     size= 22
                 ),
-                on_hover= show_hover_art
+                on_hover= handle_color,
+                on_click= events.go_french_tapis_art_citadin
             ),
             Container(
                 Text(
@@ -140,49 +114,16 @@ def tapis_regions_cite_view(page: Page):
                     color= "white",
                     size= 22
                 ),
-                on_hover= show_hover_galerie
+                on_hover= handle_color,
+                on_click= events.go_french_tapis_galerie_env
             ),
         ], spacing= 23),
         width= page.width - 40,
-        height= 100,
-        padding= 30,
-        bgcolor= "#4D0130",
-        border_radius= 20,
+        height= 40,
+        padding= padding.only(left= 30, right= 30),
         left= 20,
         right= 20,
         top= 30
-    )
-
-    art_page = Container(
-        Column([
-            Container(
-                Text(
-                    "Variantes du tapis citadin",
-                    font_family= "EB Garamond",
-                    size= 18,
-                    color= "white"
-                ),
-                on_hover= handle_color,
-                on_click= events.go_french_tapis_art_citadin
-            ),
-            Container(
-                Text(
-                    "Variations du tapis rural",
-                    font_family= "EB Garamond",
-                    size= 18,
-                    color= "white"
-                ),
-                on_hover= handle_color,
-                on_click= events.go_french_tapis_art_rural
-            ),
-        ], spacing= 10),
-        width= 210,
-        height= 90,
-        padding= 10,
-        bgcolor= "#4D0130",
-        border_radius= border_radius.only(bottom_left= 15, bottom_right= 15),
-        top= 120,
-        right= 105
     )
 
     content_body = Container(
@@ -190,14 +131,14 @@ def tapis_regions_cite_view(page: Page):
             [],
             spacing= 0,
             scroll= "always",
-            height= 190
+            height= 220
         ),
-        width= 375,
-        height= 220,
+        width= 365,
+        height= 250,
         padding= padding.only(50, 15, 15, 15),
-        bgcolor= "#80460E",
+        bgcolor= "#9080460E",
         left= 60,
-        top= 280,
+        top= 250,
     )
     # Default content
     for i in get_txt(tapis_regions_cite_rabat.textList):
@@ -292,15 +233,14 @@ def tapis_regions_cite_view(page: Page):
                 )
             ],
             spacing= 10,
-            height= 190
+            height= 220
         ),
         width= 285,
-        height= 220,
+        height= 250,
         padding= 15,
-        bgcolor= "#80460E",
-        border_radius= border_radius.only(bottom_right= 15),
+        bgcolor= "#9080460E",
         right= 60,
-        top= 280,
+        top= 250,
     )
     def handle_content(e):
         content_body.content.controls = []
@@ -398,10 +338,9 @@ def tapis_regions_cite_view(page: Page):
         width= 645,
         height= 60,
         padding= padding.only(63, 15, 25, 15),
-        bgcolor= "#4D0130",
-        border_radius= border_radius.only(top_right= 15),
+        bgcolor= "#904D0130",
         left= 60,
-        top= 220,
+        top= 190,
     )
     current_page = Container(
         Column([
@@ -427,42 +366,8 @@ def tapis_regions_cite_view(page: Page):
         width= 210,
         height= 90,
         padding= 10,
-        bgcolor= "#4D0130",
-        border_radius= border_radius.only(bottom_left= 15, bottom_right= 15),
-        top= 120,
+        top= 70,
         left= 180
-    )
-    
-    galerie_bar = Container(
-        Column([
-            Container(
-                Text(
-                    "Environnement",
-                    font_family= "EB Garamond",
-                    size= 18,
-                    color= "white"
-                ),
-                on_hover= handle_color,
-                on_click= events.go_french_tapis_galerie_env
-            ),
-            Container(
-                Text(
-                    "Oeuvres",
-                    font_family= "EB Garamond",
-                    size= 18,
-                    color= "white"
-                ),
-                on_hover= handle_color,
-                on_click= events.go_french_tapis_galerie_oeuvres
-            ),
-        ], spacing= 10),
-        width= 195,
-        height= 100,
-        padding= padding.only(10, 20, 10, 10),
-        bgcolor= "#4D0130",
-        border_radius= border_radius.only(bottom_left= 15, bottom_right= 15),
-        top= 110,
-        right= 20
     )
 
     body = Container(
@@ -471,16 +376,13 @@ def tapis_regions_cite_view(page: Page):
             navbar,
             bar,
             content_body,
-            Container(),
             content_bar_body,
             Image(
                 src= "img/tapis/tapis_text_img.png",
-                width= 38,
-                height= 330,
+                height= 310,
                 left= 60,
-                top= 195,
+                top= 188,
             ),
-            Container(),
             content_second_body,
             current_page
         ])
